@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
         ccache \
         maven \
         openjdk-8-jdk \
+        openjdk-17-jdk \
         python3 \
         python3-pip \
         python3-dev \
@@ -43,7 +44,8 @@ RUN apt-get update && apt-get install -y \
         && rm -rf /var/lib/apt/lists/*
 
 # Set up Java and environment
-ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV JDK_17=/usr/lib/jvm/java-17-openjdk-amd64
 ENV MAVEN_OPTS="-Xmx8g"
 ENV DORIS_THIRDPARTY=/tmp/doris_thirdparty
 ENV PYTHON_EXECUTABLE=/usr/bin/python3
