@@ -29,9 +29,23 @@ def main():
             
         status = parts[0]
         f = parts[1]
-        
-        # Only process test files
-        if not (f.endswith("Tests.java") or f.endswith("IT.java")):
+
+        # Only consider Java files that are likely part of a test source set.
+        if not f.endswith(".java"):
+            continue
+
+        is_test_name = f.endswith("Tests.java") or f.endswith("IT.java")
+        # Elasticsearch uses several test source sets (unit, integration, REST, etc.).
+        # Treat anything under these as test-related, even if the class name itself
+        # is a helper (Constants, *Actions, etc.).
+        is_in_test_source = (
+            "/src/test/java/" in f
+            or "/src/javaRestTest/java/" in f
+            or "/src/yamlRestTest/java/" in f
+        )
+
+        if not (is_test_name or is_in_test_source):
+            # Likely production or build-tool code; we don't derive a specific test target.
             continue
         
         # Find the Gradle module for this file
