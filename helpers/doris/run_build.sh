@@ -45,6 +45,7 @@ docker run --rm \
     -w /repo \
     -e DORIS_HOME=/repo \
     -e DORIS_THIRDPARTY=/tmp/doris_thirdparty \
+    -e DORIS_BUILD_PYTHON_VERSION=3 \
     --cpus=4 \
     --memory=8g \
     "${BUILDER_IMAGE_TAG}" \
