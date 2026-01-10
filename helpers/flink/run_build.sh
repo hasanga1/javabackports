@@ -13,9 +13,11 @@ git checkout -f ${COMMIT_SHA}
 # Create persistent Maven cache volume
 docker volume create maven-cache-flink 2>/dev/null || true
 
-echo "--- Running Maven build (compile only, no tests) ---"
+echo "--- Running Maven build (compile only, no tests, skipping flink-runtime-web) ---"
 
-BUILD_COMMAND="mvn clean install -DskipTests \
+# Skip the flink-runtime-web module to avoid frontend (npm) build failures.
+# We still build all required dependencies via -am.
+BUILD_COMMAND="mvn -pl '!flink-runtime-web' -am clean install -DskipTests \
   -Dmaven.javadoc.skip=true \
   -Dcheckstyle.skip=true \
   -Dspotbugs.skip=true \
