@@ -427,8 +427,8 @@ def collect_test_reports(project_name, project_repo_dir, dest_dir):
         for f in os.listdir(dest_dir)[:10]:
             print(f"  - {f}")
 
-def execute_lifecycle(project_name, commit_sha, state, toolkit_dir, project_repo_dir, work_dir, test_targets, 
-                      apply_test_changes_from=None, modified_test_files=None):
+def execute_lifecycle(project_name, commit_sha, state, toolkit_dir, project_repo_dir, work_dir, test_targets,
+                      apply_test_changes_from=None, modified_test_files=None, build_scope=None):
     """
     Execute build and test lifecycle for a commit state.
     
@@ -477,6 +477,10 @@ def execute_lifecycle(project_name, commit_sha, state, toolkit_dir, project_repo
         "BUILD_STATUS_FILE": status_file,
         "BUILD_DIR_NAME": f"build_{commit_sha[:7]}_{state}"
     }
+
+    # Allow per-project build scope hints (e.g., Doris FE_ONLY vs FULL)
+    if project_name == "doris" and build_scope:
+        env["DORIS_BUILD_SCOPE"] = build_scope
 
     if config['build_system'] == 'make':
         env["BOOT_JDK"] = config['boot_jdk']
@@ -622,6 +626,8 @@ def main():
         dockerfile = os.path.join(toolkit_dir, "helpers", project_name, "Dockerfile")
         run_command(f"docker build -t {builder_tag} -f {dockerfile} {os.path.dirname(dockerfile)}")
 
+    doris_build_scope = None
+
     for idx in range(args.start_index, end_index):
         row = df.iloc[idx]
         commit_sha = row['Backport Commit']
@@ -652,6 +658,21 @@ def main():
             if not has_java_changes:
                 print(f"--- Skipping {commit_sha} (No Java files changed) ---")
                 continue
+
+            # For Doris, decide FE-only vs full build based on changed files
+            if project_name == "doris":
+                be_like_exts = (".c", ".cc", ".cpp", ".cxx", ".h", ".hh", ".hpp", ".hxx")
+                be_like_paths = ("be/", "thirdparty/", "output/", "ui/", "docker/", "cloud/be")
+
+                touches_be_or_native = False
+                for path in changed_files:
+                    lower_path = path.lower()
+                    if lower_path.startswith(be_like_paths) or any(lower_path.endswith(ext) for ext in be_like_exts):
+                        touches_be_or_native = True
+                        break
+
+                doris_build_scope = "FULL" if touches_be_or_native else "FE_ONLY"
+                print(f"--- Doris build scope for {commit_sha}: {doris_build_scope} ---")
         except:
             print("Error finding parent commit or checking file count.")
             continue
@@ -832,7 +853,16 @@ def main():
 
         # Run patched version first
         patched_test_targets = " ".join(modified_tests + added_tests) if (modified_tests or added_tests) else all_targets
-        after_res = execute_lifecycle(project_name, commit_sha, "fixed", toolkit_dir, project_repo_dir, work_dir, patched_test_targets)
+        after_res = execute_lifecycle(
+            project_name,
+            commit_sha,
+            "fixed",
+            toolkit_dir,
+            project_repo_dir,
+            work_dir,
+            patched_test_targets,
+            build_scope=doris_build_scope if project_name == "doris" else None,
+        )
         
         # Always run buggy version for proper baseline comparison
         # For patches with only new tests: run without applying test changes (no modified files)
@@ -888,10 +918,16 @@ def main():
                     print(f"--- Running buggy version without test changes (only new tests added) - establishing baseline ---")
                 
                 before_res = execute_lifecycle(
-                    project_name, parent_sha, "buggy", toolkit_dir, project_repo_dir, work_dir, 
+                    project_name,
+                    parent_sha,
+                    "buggy",
+                    toolkit_dir,
+                    project_repo_dir,
+                    work_dir,
                     buggy_test_targets,
                     apply_test_changes_from=commit_sha if apply_test_changes else None,
-                    modified_test_files=modified_test_files if apply_test_changes else None
+                    modified_test_files=modified_test_files if apply_test_changes else None,
+                    build_scope=doris_build_scope if project_name == "doris" else None,
                 )
                 
                 # Check if we hit import errors (invalid backport)

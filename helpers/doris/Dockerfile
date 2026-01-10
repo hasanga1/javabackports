@@ -1,40 +1,48 @@
 # Use the official Temurin 17 image
-FROM eclipse-temurin:17-jdk
+FROM ubuntu:20.04
 
-# ---- system packages --------------------------------------------------
-RUN apt-get update && apt-get install -y --no-install-recommends \
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
         build-essential \
+        gcc \
+        g++ \
+        cmake \
+        maven \
+        openjdk-17-jdk \
+        python3 \
+        python3-pip \
+        nodejs \
+        npm \
+        automake \
+        autoconf \
+        libtool \
+        bison \
+        flex \
+        binutils-dev \
+        zip \
+        unzip \
+        libncurses5-dev \
         curl \
         git \
         git-lfs \
-        maven \
-        python3 \
-        flex \
-        cmake \
+        ninja-build \
         thrift-compiler \
         protobuf-compiler \
         && rm -rf /var/lib/apt/lists/*
 
-# Ensure `python` and `thrift` binaries are available, as Doris scripts expect these names
-RUN if [ -x /usr/bin/python3 ] && [ ! -x /usr/bin/python ]; then \
-            ln -s /usr/bin/python3 /usr/bin/python; \
+# Ensure python and thrift are available under expected names
+RUN if ! command -v python >/dev/null 2>&1 && command -v python3 >/dev/null 2>&1; then \
+            ln -s "$(command -v python3)" /usr/local/bin/python; \
         fi && \
-        if [ -x /usr/bin/thrift-compiler ] && [ ! -x /usr/bin/thrift ]; then \
-            ln -s /usr/bin/thrift-compiler /usr/bin/thrift; \
+        if ! command -v thrift >/dev/null 2>&1 && command -v thrift-compiler >/dev/null 2>&1; then \
+            ln -s "$(command -v thrift-compiler)" /usr/local/bin/thrift; \
         fi
 
-# Hint Doris build scripts to use python3
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV MAVEN_OPTS="-Xmx4g"
 ENV DORIS_BUILD_PYTHON_VERSION=python3
 
-# ---- Boot JDK setup -------------------------------------------------
-ENV BOOT_JDK=/opt/java/openjdk
-RUN echo "Boot JDK is at ${BOOT_JDK}" && ${BOOT_JDK}/bin/java -version
+WORKDIR /toolkit
 
-# --- Switch to root user to fix all permission errors ---
-WORKDIR /repo
-
-# Add the repo directory as a "safe directory" for Git
-RUN git config --global --add safe.directory /repo
-
-# ---- Git LFS setup ----------------------------------------------------
-RUN git lfs install --system
+RUN git config --global --add safe.directory /repo && git lfs install
