@@ -1,5 +1,16 @@
-# Use the official Temurin 23 image as Boot JDK for JDK 25
+# Use a base image with necessary tools, we will install JDK 24 manually as Boot JDK
 FROM eclipse-temurin:23-jdk
+
+# ---- Boot JDK setup (JDK 24) ------------------------------------------
+# JDK 25 requires Boot JDK 24 or 25
+ENV BOOT_JDK=/opt/java/jdk-24
+RUN curl -L "https://download.java.net/java/GA/jdk24/30e52a6c98784d5b9432d6990d1810b4/36/GPL/openjdk-24_linux-x64_bin.tar.gz" -o /tmp/jdk24.tar.gz && \
+    mkdir -p /opt/java && \
+    tar -xzf /tmp/jdk24.tar.gz -C /opt/java && \
+    mv /opt/java/jdk-24* /opt/java/jdk-24 && \
+    rm /tmp/jdk24.tar.gz
+
+
 
 # ---- system packages --------------------------------------------------
 # This part is still needed and runs as root
@@ -24,7 +35,8 @@ RUN mkdir -p /opt/jtreg && \
     jtreg -version
 
 # ---- Boot JDK setup -------------------------------------------------
-ENV BOOT_JDK=/opt/java/openjdk
+# We already set BOOT_JDK above, but let's confirm/reset specific env vars if needed
+# ENV BOOT_JDK=/opt/java/jdk-24
 RUN echo "Boot JDK is at ${BOOT_JDK}" && ${BOOT_JDK}/bin/java -version
 
 # Export JTREG_HOME
