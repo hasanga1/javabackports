@@ -82,10 +82,29 @@ def main():
         
         # Find the Maven module
         module = find_module_for_file(args.repo, filepath)
-        
+
+
+        # Map itests subdirectories to their Maven modules
+        # Only map to modules that exist in pom.xml
+        valid_modules = set([
+            "hcatalog", "qtest", "qtest-accumulo", "qtest-spark", "hive-jmh", "hive-minikdc"
+        ])
+        itests_module_map = {
+            "itests/hcatalog-unit": "hcatalog",
+            "itests/qtest": "qtest",
+            "itests/qtest-accumulo": "qtest-accumulo",
+            "itests/qtest-spark": "qtest-spark",
+            "itests/hive-jmh": "hive-jmh",
+            "itests/hive-minikdc": "hive-minikdc"
+        }
+        for test_path, mod_name in itests_module_map.items():
+            if test_path in filepath and mod_name in valid_modules:
+                module = mod_name
+                break
+
         if not module:
             continue
-        
+
         if is_test_file:
             test_class = extract_test_class(filepath)
             if test_class:
