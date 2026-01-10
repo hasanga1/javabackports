@@ -14,10 +14,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # ---- Boot JDK setup (JDK 24) ------------------------------------------
 # JDK 25 requires Boot JDK 24 or 25
+# Using OpenJDK 24 GA
 ENV BOOT_JDK=/opt/java/jdk-24
-RUN curl -L "https://download.java.net/java/GA/jdk24/30e52a6c98784d5b9432d6990d1810b4/36/GPL/openjdk-24_linux-x64_bin.tar.gz" -o /tmp/jdk24.tar.gz && \
+RUN curl -L "https://download.java.net/java/GA/jdk24/24+36/GPL/openjdk-24+36_linux-x64_bin.tar.gz" -o /tmp/jdk24.tar.gz && \
     mkdir -p /opt/java && \
     tar -xzf /tmp/jdk24.tar.gz -C /opt/java && \
+    # The archive usually extracts to jdk-24 or jdk-24.0.2, we need to be careful with the move
+    # Let's inspect/move carefully:
     mv /opt/java/jdk-24* /opt/java/jdk-24 && \
     rm /tmp/jdk24.tar.gz
 
