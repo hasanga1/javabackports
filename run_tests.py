@@ -927,7 +927,7 @@ def main():
             
             # Determine test targets and whether to apply test changes
             buggy_test_targets = all_targets  # Default to all targets
-            apply_test_changes = False
+            should_apply_test_changes = False
             
             # If only new test files (no modified tests), skip buggy build entirely
             if len(modified_test_files) == 0 and len(added_tests) > 0 and len(modified_tests) == 0:
@@ -936,7 +936,7 @@ def main():
             elif len(modified_test_files) > 0:
                 # Has modified test files - we already applied and checked them above
                 buggy_test_targets = " ".join(modified_tests) if modified_tests else all_targets
-                apply_test_changes = False  # Already applied in import check, don't re-apply
+                should_apply_test_changes = False  # Already applied in import check, don't re-apply
                 print(f"--- Running buggy version (test changes already applied and validated) ---")
                 
                 before_res = execute_lifecycle(
