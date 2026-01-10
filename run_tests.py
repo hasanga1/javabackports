@@ -761,7 +761,7 @@ def main():
                 print(f"--- No specific Doris tests changed; defaulting to ALL tests for {commit_sha} ---")
                 all_targets = "ALL"
             else:
-                print(f"--- Skipping {commit_sha} (No relevant test targets found) ---")
+                print(f"--- Skipping {commit_sha} (No test targets detected; no work to do) ---")
                 continue
         
         # Determine modified test files (for applying changes to buggy version)

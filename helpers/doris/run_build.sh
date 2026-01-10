@@ -50,10 +50,10 @@ docker run --rm \
                 fi
             fi
             if [ -z "${DORIS_TOOLCHAIN:-}" ]; then
-                if [ -n "${DORIS_THIRDPARTY:-}" ]; then
-                    export DORIS_TOOLCHAIN="${DORIS_THIRDPARTY}/toolchain"
-                elif [ -d /repo/thirdparty/installed ]; then
-                    export DORIS_TOOLCHAIN=/repo/thirdparty/installed/toolchain
+                if command -v clang &>/dev/null; then
+                    export DORIS_TOOLCHAIN=clang
+                else
+                    export DORIS_TOOLCHAIN=gcc
                 fi
             fi
             . ./env.sh
@@ -61,24 +61,7 @@ docker run --rm \
             echo "env.sh NOT found; continuing without it"
         fi
 
-        if [ -d thirdparty ]; then
-            if [ ! -f thirdparty/installed/.thirdparty_built ]; then
-                echo "=== Building Doris thirdparty dependencies (one-time, may take long) ==="
-                cd thirdparty
-                if [ -f build-thirdparty.sh ]; then
-                    bash build-thirdparty.sh
-                else
-                    echo "build-thirdparty.sh not found; skipping explicit thirdparty build"
-                fi
-                cd /repo
-                mkdir -p thirdparty/installed
-                touch thirdparty/installed/.thirdparty_built || true
-            else
-                echo "Using cached thirdparty in thirdparty/installed"
-            fi
-        else
-            echo "thirdparty directory not present; skipping thirdparty build"
-        fi
+        echo "=== Attempting to build Doris (build.sh will handle thirdparty if needed) ==="
 
         if [ -f build.sh ]; then
             SCOPE="${DORIS_BUILD_SCOPE:-FE_ONLY}"
