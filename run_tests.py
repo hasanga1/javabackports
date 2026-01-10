@@ -753,16 +753,10 @@ def main():
         added_tests = test_targets_data["added"]
         all_targets = test_targets_data["all_targets"]
 
-        # If no explicit test files were detected:
-        # - For Doris, but with Java changes present, run ALL tests instead of skipping
-        # - For other projects, keep the existing behavior and skip
+        # If no explicit test files were detected, skip
         if len(modified_tests) == 0 and len(added_tests) == 0:
-            if project_name == "doris" and 'has_java_changes' in locals() and has_java_changes:
-                print(f"--- No specific Doris tests changed; defaulting to ALL tests for {commit_sha} ---")
-                all_targets = "ALL"
-            else:
-                print(f"--- Skipping {commit_sha} (No test targets detected; no work to do) ---")
-                continue
+            print(f"--- Skipping {commit_sha} (No test targets detected; no work to do) ---")
+            continue
         
         # Determine modified test files (for applying changes to buggy version)
         modified_test_files = get_modified_test_files(project_repo_dir, commit_sha)

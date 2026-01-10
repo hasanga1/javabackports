@@ -41,7 +41,6 @@ fi
 docker run --rm \
     -v "${PROJECT_DIR}:/repo" \
     -v "maven-repo-doris:/root/.m2/repository" \
-    -v "doris-thirdparty:/repo/thirdparty/installed" \
     -w /repo \
     "${BUILDER_IMAGE_TAG}" \
     bash -c "${BUILD_CMD}" || BUILD_EXIT_CODE=$?
