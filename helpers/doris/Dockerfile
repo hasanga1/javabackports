@@ -1,17 +1,20 @@
-# Use the official Temurin 17 image
-FROM ubuntu:20.04
+# Use Apache Doris's recommended build environment
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Install all dependencies required for building Doris
 RUN apt-get update && apt-get install -y \
         build-essential \
-        gcc \
-        g++ \
+        gcc-9 \
+        g++-9 \
         cmake \
+        ccache \
         maven \
-        openjdk-17-jdk \
+        openjdk-8-jdk \
         python3 \
         python3-pip \
+        python3-dev \
         nodejs \
         npm \
         automake \
@@ -23,6 +26,7 @@ RUN apt-get update && apt-get install -y \
         zip \
         unzip \
         libncurses5-dev \
+        libssl-dev \
         curl \
         wget \
         git \
@@ -30,20 +34,26 @@ RUN apt-get update && apt-get install -y \
         ninja-build \
         thrift-compiler \
         protobuf-compiler \
+        gdb \
+        telnet \
+        mysql-client \
+        libboost-all-dev \
+        libffi-dev \
+        pkg-config \
         && rm -rf /var/lib/apt/lists/*
 
-# Ensure python and thrift are available under expected names
-RUN if ! command -v python >/dev/null 2>&1 && command -v python3 >/dev/null 2>&1; then \
-            ln -s "$(command -v python3)" /usr/local/bin/python; \
-        fi && \
-        if ! command -v thrift >/dev/null 2>&1 && command -v thrift-compiler >/dev/null 2>&1; then \
-            ln -s "$(command -v thrift-compiler)" /usr/local/bin/thrift; \
-        fi
+# Set up Java and environment
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ENV MAVEN_OPTS="-Xmx8g"
+ENV DORIS_THIRDPARTY=/tmp/doris_thirdparty
+ENV PYTHON_EXECUTABLE=/usr/bin/python3
 
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-ENV MAVEN_OPTS="-Xmx4g"
-ENV DORIS_BUILD_PYTHON_VERSION=python3
+# Create directories for dependencies
+RUN mkdir -p /root/.m2/repository && \
+    mkdir -p ${DORIS_THIRDPARTY}
+
+# Configure git
+RUN git config --global --add safe.directory /repo && \
+    git lfs install
 
 WORKDIR /toolkit
-
-RUN git config --global --add safe.directory /repo && git lfs install

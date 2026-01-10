@@ -28,22 +28,31 @@ docker volume create doris-thirdparty 2>/dev/null || true
 echo "=== Building with Doris build.sh ==="
 
 # Determine build flags based on changed files
-BUILD_FLAGS="${DORIS_BUILD_SCOPE:-FE_ONLY}"
-if [ "${BUILD_FLAGS}" = "FULL" ]; then
+# Default to FE-only build for performance
+BUILD_FLAGS="--fe"
+if [ "${DORIS_BUILD_SCOPE:-FE_ONLY}" = "FULL" ]; then
     echo "--- Full build (FE + BE + UI) ---"
-    BUILD_CMD="bash build.sh"
+    BUILD_FLAGS=""
 else
     echo "--- Frontend-only build (FE) ---"
-    BUILD_CMD="bash build.sh --fe"
 fi
 
-# Run build.sh inside container; let it handle thirdparty, env vars, etc.
+# Run build.sh inside container with proper environment
 docker run --rm \
     -v "${PROJECT_DIR}:/repo" \
     -v "maven-repo-doris:/root/.m2/repository" \
+    -v "doris-thirdparty:/tmp/doris_thirdparty" \
     -w /repo \
+    -e DORIS_HOME=/repo \
+    -e DORIS_THIRDPARTY=/tmp/doris_thirdparty \
+    --cpus=4 \
+    --memory=8g \
     "${BUILDER_IMAGE_TAG}" \
-    bash -c "${BUILD_CMD}" || BUILD_EXIT_CODE=$?
+    bash -c "set -x && \
+             git config --global --add safe.directory /repo && \
+             git checkout -f ${COMMIT_SHA} && \
+             git submodule update --init --recursive 2>/dev/null || true && \
+             sh build.sh --clean ${BUILD_FLAGS} 2>&1" || BUILD_EXIT_CODE=$?
 
 if [ "${BUILD_EXIT_CODE}" -eq 0 ]; then
     echo "Success" > "${BUILD_STATUS_FILE}"
