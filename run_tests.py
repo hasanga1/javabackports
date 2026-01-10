@@ -74,6 +74,14 @@ PROJECT_CONFIG = {
         "boot_jdk": "/opt/java/openjdk",
         "jtreg_home": "/opt/jtreg"
     },
+    "jdk25u-dev": {
+        "repo_dir": "jdk25u-dev",
+        "report_pattern": "**/JTwork/**/*.xml",
+        "builder_tag": "jdk25-builder:latest",
+        "build_system": "make",
+        "boot_jdk": "/opt/java/openjdk",
+        "jtreg_home": "/opt/jtreg"
+    },
     "sql": {
         "repo_dir": "sql",
         "report_pattern": "**/build/test-results/**/*.xml",
