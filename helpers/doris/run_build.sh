@@ -38,7 +38,17 @@ docker run --rm \
         ls -la
 
         if [ -f env.sh ]; then
-            echo "Sourcing env.sh ..."
+            echo "Preparing Doris env vars and sourcing env.sh ..."
+            if [ -z "${DORIS_HOME:-}" ]; then
+                export DORIS_HOME=/repo
+            fi
+            if [ -z "${DORIS_THIRDPARTY:-}" ]; then
+                if [ -d /repo/thirdparty/installed ]; then
+                    export DORIS_THIRDPARTY=/repo/thirdparty/installed
+                elif [ -d /repo/thirdparty ]; then
+                    export DORIS_THIRDPARTY=/repo/thirdparty
+                fi
+            fi
             . ./env.sh
         else
             echo "env.sh NOT found; continuing without it"
