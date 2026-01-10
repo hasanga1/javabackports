@@ -865,54 +865,109 @@ def main():
             # Checkout parent commit
             run_command(f"git checkout {parent_sha}", cwd=project_repo_dir, capture_output=True)
             
+            # Early import check: if we have modified test files, check them for import errors
+            # before spending time building the buggy version
+            if len(modified_test_files) > 0:
+                print(f"--- Early import check: applying test changes and checking for import errors ---")
+                success, msg = apply_test_changes(project_repo_dir, commit_sha, modified_test_files)
+                if not success:
+                    print(f"--- ⚠️  Failed to apply test changes: {msg} ---")
+                    # Skip buggy build, mark as invalid
+                    print(f"--- ❌ INVALID BACKPORT: Could not apply test changes to buggy version ---")
+                    result_entry = {
+                        "index": idx,
+                        "commit": commit_sha,
+                        "parent": parent_sha,
+                        "validation_status": "INVALID_BACKPORT",
+                        "validation_reason": "test_apply_failed",
+                        "error_details": msg,
+                        "import_errors": [],
+                        "test_targets": {
+                            "modified": modified_tests,
+                            "added": added_tests,
+                            "modified_files": modified_test_files if 'modified_test_files' in locals() else [],
+                        }
+                    }
+                    full_results_data.append(result_entry)
+                    with open(results_json, 'w') as f:
+                        json.dump(full_results_data, f, indent=2)
+                    # Reset to patched version
+                    run_command(f"git checkout {commit_sha}", cwd=project_repo_dir, capture_output=True)
+                    continue
+                
+                # Check for import errors without building
+                has_no_import_errors, check_msg, errors = compile_and_check_imports(
+                    project_repo_dir, modified_test_files, project_name
+                )
+                
+                if not has_no_import_errors:
+                    print(f"--- ❌ INVALID BACKPORT: Import errors in buggy version: {check_msg} ---")
+                    result_entry = {
+                        "index": idx,
+                        "commit": commit_sha,
+                        "parent": parent_sha,
+                        "validation_status": "INVALID_BACKPORT",
+                        "validation_reason": "import_error",
+                        "error_details": check_msg,
+                        "import_errors": errors,
+                        "test_targets": {
+                            "modified": modified_tests,
+                            "added": added_tests,
+                            "modified_files": modified_test_files if 'modified_test_files' in locals() else [],
+                        }
+                    }
+                    full_results_data.append(result_entry)
+                    with open(results_json, 'w') as f:
+                        json.dump(full_results_data, f, indent=2)
+                    # Reset to patched version
+                    run_command(f"git checkout {commit_sha}", cwd=project_repo_dir, capture_output=True)
+                    continue
+                
+                print(f"--- ✅ {check_msg} - Proceeding with buggy build ---")
+            
             # Determine test targets and whether to apply test changes
             buggy_test_targets = all_targets  # Default to all targets
             apply_test_changes = False
             
-            if len(modified_test_files) > 0:
-                # Has modified test files - apply changes and check for import errors
+            # If only new test files (no modified tests), skip buggy build entirely
+            if len(modified_test_files) == 0 and len(added_tests) > 0 and len(modified_tests) == 0:
+                print(f"--- Only new tests added (no modified tests). Skipping buggy build/test. ---")
+                before_res = {"build": "Skipped", "test": "Skipped (Only New Tests)", "passed": set(), "failed": set()}
+            elif len(modified_test_files) > 0:
+                # Has modified test files - we already applied and checked them above
                 buggy_test_targets = " ".join(modified_tests) if modified_tests else all_targets
-                apply_test_changes = True
-                print(f"--- Running buggy version with modified test changes applied ---")
+                apply_test_changes = False  # Already applied in import check, don't re-apply
+                print(f"--- Running buggy version (test changes already applied and validated) ---")
+                
+                before_res = execute_lifecycle(
+                    project_name,
+                    parent_sha,
+                    "buggy",
+                    toolkit_dir,
+                    project_repo_dir,
+                    work_dir,
+                    buggy_test_targets,
+                    apply_test_changes_from=None,  # Already applied in early import check
+                    modified_test_files=None,
+                    build_scope=doris_build_scope if project_name == "doris" else None,
+                )
             else:
-                # Only new test files - run all tests without applying changes for baseline
+                # Default: run all tests in buggy version
                 buggy_test_targets = all_targets
-                print(f"--- Running buggy version without test changes (only new tests added) - establishing baseline ---")
-            
-            before_res = execute_lifecycle(
-                project_name,
-                parent_sha,
-                "buggy",
-                toolkit_dir,
-                project_repo_dir,
-                work_dir,
-                buggy_test_targets,
-                apply_test_changes_from=commit_sha if apply_test_changes else None,
-                modified_test_files=modified_test_files if apply_test_changes else None,
-                build_scope=doris_build_scope if project_name == "doris" else None,
-            )
-            
-            # Check if we hit import errors (invalid backport)
-            if before_res.get("error_type") == "import_error":
-                print(f"--- ❌ INVALID BACKPORT: Import errors detected when applying test changes to buggy version ---")
-                result_entry = {
-                    "index": idx,
-                    "commit": commit_sha,
-                    "parent": parent_sha,
-                    "validation_status": "INVALID_BACKPORT",
-                    "validation_reason": "import_error",
-                    "error_details": before_res.get("error_msg"),
-                    "import_errors": before_res.get("import_errors", []),
-                    "test_targets": {
-                        "modified": modified_tests,
-                        "added": added_tests,
-                        "modified_files": modified_test_files if 'modified_test_files' in locals() else [],
-                    }
-                }
-                full_results_data.append(result_entry)
-                with open(results_json, 'w') as f:
-                    json.dump(full_results_data, f, indent=2)
-                continue
+                print(f"--- Running buggy version (establishing baseline) ---")
+                
+                before_res = execute_lifecycle(
+                    project_name,
+                    parent_sha,
+                    "buggy",
+                    toolkit_dir,
+                    project_repo_dir,
+                    work_dir,
+                    buggy_test_targets,
+                    apply_test_changes_from=None,
+                    modified_test_files=None,
+                    build_scope=doris_build_scope if project_name == "doris" else None,
+                )
         else:
             print(f"--- Patched version build failed; skipping buggy version ---")
             before_res = {"build": "Skipped", "test": "Skipped (Build Failed)", "passed": set(), "failed": set()}
