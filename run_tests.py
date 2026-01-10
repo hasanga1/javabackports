@@ -109,6 +109,12 @@ PROJECT_CONFIG = {
         "report_pattern": "**/target/surefire-reports/*.xml",
         "builder_tag": "flink-builder:latest",
         "build_system": "maven"
+    },
+    "lucene": {
+        "repo_dir": "lucene",
+        "report_pattern": "all-test-results/*.xml",
+        "builder_tag": "lucene-builder:latest",
+        "build_system": "self-building"
     }
 }
 
