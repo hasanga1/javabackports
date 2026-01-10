@@ -865,68 +865,36 @@ def main():
             # Checkout parent commit
             run_command(f"git checkout {parent_sha}", cwd=project_repo_dir, capture_output=True)
             
-            # Validate that test targets exist in buggy version (for Gradle multi-module projects)
-            config = PROJECT_CONFIG[project_name]
-            if config.get('build_system') in ['self-building'] and (modified_tests or added_tests):
-                print(f"--- Validating test targets exist in buggy version ---")
-                # For Gradle projects, check if modules exist
-                test_targets_to_validate = modified_tests + added_tests
-                invalid_targets = []
-                for target in test_targets_to_validate:
-                    # Extract module from target like ":spring-web:test --tests ..."
-                    if ':' in target:
-                        module = target.split(':test')[0]
-                        if module and module != ':':
-                            # Check if module directory exists
-                            module_dir = module.strip(':').replace(':', '/')
-                            module_path = os.path.join(project_repo_dir, module_dir)
-                            if not os.path.exists(module_path):
-                                print(f"--- Module {module} does not exist in buggy version ---")
-                                invalid_targets.append(target)
-                
-                if invalid_targets:
-                    # Remove invalid targets
-                    modified_tests = [t for t in modified_tests if t not in invalid_targets]
-                    added_tests = [t for t in added_tests if t not in invalid_targets]
-                    
-                    if not modified_tests and not added_tests:
-                        print(f"--- All test targets invalid in buggy version. Treating as new module addition. ---")
-                        before_res = {"build": "Skipped", "test": "Skipped (New Module)", "passed": set(), "failed": set()}
-                        # Reset to patched version
-                        run_command(f"git checkout {commit_sha}", cwd=project_repo_dir, capture_output=True)
+            # Determine test targets and whether to apply test changes
+            buggy_test_targets = all_targets  # Default to all targets
+            apply_test_changes = False
             
-            # Only run buggy tests if we haven't already determined to skip
-            if 'before_res' not in locals():
-                # Determine test targets and whether to apply test changes
-                buggy_test_targets = all_targets  # Default to all targets
-                apply_test_changes = False
-                
-                if len(modified_test_files) > 0:
-                    # Has modified test files - apply changes and check for import errors
-                    buggy_test_targets = " ".join(modified_tests) if modified_tests else all_targets
-                    apply_test_changes = True
-                    print(f"--- Running buggy version with modified test changes applied ---")
-                else:
-                    # Only new test files - run all tests without applying changes for baseline
-                    buggy_test_targets = all_targets
-                    print(f"--- Running buggy version without test changes (only new tests added) - establishing baseline ---")
-                
-                before_res = execute_lifecycle(
-                    project_name,
-                    parent_sha,
-                    "buggy",
-                    toolkit_dir,
-                    project_repo_dir,
-                    work_dir,
-                    buggy_test_targets,
-                    apply_test_changes_from=commit_sha if apply_test_changes else None,
-                    modified_test_files=modified_test_files if apply_test_changes else None,
-                    build_scope=doris_build_scope if project_name == "doris" else None,
-                )
-                
-                # Check if we hit import errors (invalid backport)
-                if before_res.get("error_type") == "import_error":
-                    print(f"--- ❌ INVALID BACKPORT: Import errors detected when applying test changes to buggy version ---")
+            if len(modified_test_files) > 0:
+                # Has modified test files - apply changes and check for import errors
+                buggy_test_targets = " ".join(modified_tests) if modified_tests else all_targets
+                apply_test_changes = True
+                print(f"--- Running buggy version with modified test changes applied ---")
+            else:
+                # Only new test files - run all tests without applying changes for baseline
+                buggy_test_targets = all_targets
+                print(f"--- Running buggy version without test changes (only new tests added) - establishing baseline ---")
+            
+            before_res = execute_lifecycle(
+                project_name,
+                parent_sha,
+                "buggy",
+                toolkit_dir,
+                project_repo_dir,
+                work_dir,
+                buggy_test_targets,
+                apply_test_changes_from=commit_sha if apply_test_changes else None,
+                modified_test_files=modified_test_files if apply_test_changes else None,
+                build_scope=doris_build_scope if project_name == "doris" else None,
+            )
+            
+            # Check if we hit import errors (invalid backport)
+            if before_res.get("error_type") == "import_error":
+                print(f"--- ❌ INVALID BACKPORT: Import errors detected when applying test changes to buggy version ---")
                     result_entry = {
                         "index": idx,
                         "commit": commit_sha,
@@ -946,6 +914,7 @@ def main():
                         json.dump(full_results_data, f, indent=2)
                     continue
         else:
+            print(f"--- Patched version build failed; skipping buggy version ---")
             before_res = {"build": "Skipped", "test": "Skipped (Build Failed)", "passed": set(), "failed": set()}
 
         fixes = list(before_res["failed"].intersection(after_res["passed"]))
