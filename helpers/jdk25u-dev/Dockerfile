@@ -1,19 +1,8 @@
 # Use a base image with necessary tools, we will install JDK 24 manually as Boot JDK
 FROM eclipse-temurin:23-jdk
 
-# ---- Boot JDK setup (JDK 24) ------------------------------------------
-# JDK 25 requires Boot JDK 24 or 25
-ENV BOOT_JDK=/opt/java/jdk-24
-RUN curl -L "https://download.java.net/java/GA/jdk24/30e52a6c98784d5b9432d6990d1810b4/36/GPL/openjdk-24_linux-x64_bin.tar.gz" -o /tmp/jdk24.tar.gz && \
-    mkdir -p /opt/java && \
-    tar -xzf /tmp/jdk24.tar.gz -C /opt/java && \
-    mv /opt/java/jdk-24* /opt/java/jdk-24 && \
-    rm /tmp/jdk24.tar.gz
-
-
-
-# ---- system packages --------------------------------------------------
-# This part is still needed and runs as root
+# ---- system packages (Install FIRST because we need curl) ----------------
+# This part runs as root
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ccache \
@@ -22,6 +11,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev \
     libgtk-3-dev && \
     rm -rf /var/lib/apt/lists/*
+
+# ---- Boot JDK setup (JDK 24) ------------------------------------------
+# JDK 25 requires Boot JDK 24 or 25
+ENV BOOT_JDK=/opt/java/jdk-24
+RUN curl -L "https://download.java.net/java/GA/jdk24/30e52a6c98784d5b9432d6990d1810b4/36/GPL/openjdk-24_linux-x64_bin.tar.gz" -o /tmp/jdk24.tar.gz && \
+    mkdir -p /opt/java && \
+    tar -xzf /tmp/jdk24.tar.gz -C /opt/java && \
+    mv /opt/java/jdk-24* /opt/java/jdk-24 && \
+    rm /tmp/jdk24.tar.gz
 
 # ---- jtreg ------------------------------------------------------------
 # Download jtreg 7.3.1+1 (Compatible with recent JDKs)
