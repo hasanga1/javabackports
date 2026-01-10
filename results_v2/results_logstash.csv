@@ -1,13 +1,8 @@
 commit,validation_status,validation_reason,build_after,test_after,build_before,test_before,error_type,regressions,fixes,new_passes
-1a876e2353fee2497265afce8b24f36fa5365f83,VALID_BACKPORT,build_fixed,Success,Success,Fail,Skipped,,0,0,945
 a20bf01f377f7798a00c1fd15b7058197904747e,VALID_BACKPORT,,Success,Success,Success,Success,,0,0,0
 d0d3697f736074f981787a357d6aeb1d2f43dfcc,VALID_BACKPORT,tests_fixed,Success,Success,Success,Fail,,0,2,0
-7d758394b58b1e71c10f6bba169093ab7aebe825,VALID_BACKPORT,build_fixed,Success,Success,Fail,Skipped,,0,0,983
 a06b7a22ead49486fafbde9d658f7dba027e81fc,VALID_BACKPORT,,Success,Fail,Success,Fail,,0,0,0
 24104833a4860a7a61fb472a1e5dca633c145094,VALID_BACKPORT,tests_fixed,Success,Fail,Success,Fail,,0,1,0
-6986f99ee7cc8819898b757a94cdc33fc5759607,VALID_BACKPORT,build_fixed,Success,Fail,Fail,Skipped,,0,0,980
-6b45a21c560293a1aa16f4a6b784f71d70bf00f7,VALID_BACKPORT,build_fixed,Success,Fail,Fail,Skipped,,0,0,978
-267eacc3441c22d2b79dc351d1ce361f76eec698,VALID_BACKPORT,build_fixed,Success,Fail,Fail,Skipped,,0,0,978
 a3ab584257224faa235dcfd5882048b9abc233ec,VALID_BACKPORT,tests_fixed,Success,Fail,Success,Fail,,0,5,0
 5b3e62e52d5538d2ae310b1158909d8822d59192,VALID_BACKPORT,,Success,Fail,Success,Fail,,0,0,0
 5b314afdadd232434b34a0a7d34997425731c071,VALID_BACKPORT,,Success,Fail,Success,Fail,,0,0,0
