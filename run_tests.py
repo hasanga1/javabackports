@@ -895,24 +895,24 @@ def main():
             # Check if we hit import errors (invalid backport)
             if before_res.get("error_type") == "import_error":
                 print(f"--- ❌ INVALID BACKPORT: Import errors detected when applying test changes to buggy version ---")
-                    result_entry = {
-                        "index": idx,
-                        "commit": commit_sha,
-                        "parent": parent_sha,
-                        "validation_status": "INVALID_BACKPORT",
-                        "validation_reason": "import_error",
-                        "error_details": before_res.get("error_msg"),
-                        "import_errors": before_res.get("import_errors", []),
-                        "test_targets": {
-                            "modified": modified_tests,
-                            "added": added_tests,
-                            "modified_files": modified_test_files if 'modified_test_files' in locals() else [],
-                        }
+                result_entry = {
+                    "index": idx,
+                    "commit": commit_sha,
+                    "parent": parent_sha,
+                    "validation_status": "INVALID_BACKPORT",
+                    "validation_reason": "import_error",
+                    "error_details": before_res.get("error_msg"),
+                    "import_errors": before_res.get("import_errors", []),
+                    "test_targets": {
+                        "modified": modified_tests,
+                        "added": added_tests,
+                        "modified_files": modified_test_files if 'modified_test_files' in locals() else [],
                     }
-                    full_results_data.append(result_entry)
-                    with open(results_json, 'w') as f:
-                        json.dump(full_results_data, f, indent=2)
-                    continue
+                }
+                full_results_data.append(result_entry)
+                with open(results_json, 'w') as f:
+                    json.dump(full_results_data, f, indent=2)
+                continue
         else:
             print(f"--- Patched version build failed; skipping buggy version ---")
             before_res = {"build": "Skipped", "test": "Skipped (Build Failed)", "passed": set(), "failed": set()}
