@@ -49,6 +49,13 @@ docker run --rm \
                     export DORIS_THIRDPARTY=/repo/thirdparty
                 fi
             fi
+            if [ -z "${DORIS_TOOLCHAIN:-}" ]; then
+                if [ -n "${DORIS_THIRDPARTY:-}" ]; then
+                    export DORIS_TOOLCHAIN="${DORIS_THIRDPARTY}/toolchain"
+                elif [ -d /repo/thirdparty/installed ]; then
+                    export DORIS_TOOLCHAIN=/repo/thirdparty/installed/toolchain
+                fi
+            fi
             . ./env.sh
         else
             echo "env.sh NOT found; continuing without it"
