@@ -24,9 +24,9 @@ RUN curl -L "https://download.java.net/java/GA/jdk24.0.2/fdc5d0102fe0414db21410a
     rm /tmp/jdk24.tar.gz
 
 # ---- jtreg ------------------------------------------------------------
-# Download jtreg 7.3.1+1 (Compatible with recent JDKs)
+# Download jtreg 8 (Required for JDK 25)
 RUN mkdir -p /opt/jtreg && \
-    curl -L "https://builds.shipilev.net/jtreg/jtreg-7.3.1+1.zip" -o /tmp/jtreg.zip && \
+    curl -L "https://builds.shipilev.net/jtreg/jtreg-8.1+1.zip" -o /tmp/jtreg.zip && \
     unzip -q /tmp/jtreg.zip -d /opt/ && \
     rm /tmp/jtreg.zip && \
     chmod +x /opt/jtreg/bin/jtreg /opt/jtreg/bin/jtdiff && \
