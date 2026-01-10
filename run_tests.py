@@ -658,6 +658,20 @@ def main():
             if not has_java_changes:
                 print(f"--- Skipping {commit_sha} (No Java files changed) ---")
                 continue
+            
+            # Separate test and non-test Java files
+            test_java_files = [f for f in changed_files if f.endswith(".java") and any(indicator in f.lower() for indicator in ['test', 'spec'])]
+            non_test_java_files = [f for f in changed_files if f.endswith(".java") and not any(indicator in f.lower() for indicator in ['test', 'spec'])]
+            
+            print(f"--- Java files breakdown: {len(non_test_java_files)} code, {len(test_java_files)} test ---")
+            
+            # Require both code changes AND test changes to continue
+            if len(non_test_java_files) == 0:
+                print(f"--- Skipping {commit_sha} (Only test files changed, no code changes) ---")
+                continue
+            if len(test_java_files) == 0:
+                print(f"--- Skipping {commit_sha} (Only code files changed, no test changes) ---")
+                continue
 
             # For Doris, decide FE-only vs full build based on changed files
             if project_name == "doris":

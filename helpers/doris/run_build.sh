@@ -52,7 +52,7 @@ docker run --rm \
              git config --global --add safe.directory /repo && \
              git checkout -f ${COMMIT_SHA} && \
              git submodule update --init --recursive 2>/dev/null || true && \
-             sh build.sh --clean ${BUILD_FLAGS} 2>&1" || BUILD_EXIT_CODE=$?
+             bash build.sh --clean ${BUILD_FLAGS} 2>&1" || BUILD_EXIT_CODE=$?
 
 if [ "${BUILD_EXIT_CODE}" -eq 0 ]; then
     echo "Success" > "${BUILD_STATUS_FILE}"
