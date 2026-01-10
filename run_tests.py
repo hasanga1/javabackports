@@ -79,7 +79,7 @@ PROJECT_CONFIG = {
         "report_pattern": "**/JTwork/**/*.xml",
         "builder_tag": "jdk25-builder:latest",
         "build_system": "make",
-        "boot_jdk": "/opt/java/openjdk",
+        "boot_jdk": "/opt/java/jdk-24",
         "jtreg_home": "/opt/jtreg"
     },
     "sql": {
