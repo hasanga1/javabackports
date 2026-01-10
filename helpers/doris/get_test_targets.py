@@ -21,6 +21,7 @@ def main():
 
     modified_tests = set()
     added_tests = set()
+    has_fe_production_changes = False
 
     # 2. Analyze changes
     for line in output.strip().splitlines():
@@ -31,11 +32,12 @@ def main():
         status = parts[0]
         f = parts[1]
 
-        # Broad test-file detection for Doris:
-        # - Any .java file whose name or parent directories indicate "test"
-        #   (e.g. *Test.java, *Tests.java, *IT.java, test_*, */test/*, */*-test/*, etc.)
         if not f.endswith(".java"):
             continue
+
+        # Check if this is a production change in FE
+        if "fe/fe-core/src/main/java/" in f:
+            has_fe_production_changes = True
 
         filename = os.path.basename(f)
         name_no_ext = filename[:-5]  # strip .java
@@ -64,7 +66,7 @@ def main():
             head, tail = os.path.split(head)
             if os.path.exists(os.path.join(args.repo, head, "pom.xml")):
                 if head == "":
-                    module_path = "" # Root module? Unlikely for tests usually
+                    module_path = ""
                 else:
                     module_path = head
                 break
@@ -78,8 +80,6 @@ def main():
             continue
 
         # Extract class name
-        # Typical pattern: [module]/src/test/java/[package]/[Class]Test.java
-        # but we also allow other test source roots like src/it/java.
         class_path = None
         for marker in ["src/test/java/", "src/it/java/"]:
             if marker in f:
@@ -87,7 +87,6 @@ def main():
                 break
 
         if class_path is None:
-            # Fallback: use the part of the path after the module directory, if possible
             try:
                 if module_path and f.startswith(module_path + "/"):
                     class_path = f[len(module_path) + 1:]
@@ -98,8 +97,6 @@ def main():
 
         try:
             class_name = class_path.replace("/", ".").replace(".java", "")
-
-            # Target format: module:class
             target = f"{module_path}:{class_name}"
 
             if status == 'A':
@@ -109,7 +106,14 @@ def main():
         except Exception:
             continue
 
-    # 3. Output JSON
+    # 3. If FE production code changed but no explicit tests found,
+    #    mark that we should run all FE tests
+    if has_fe_production_changes and len(modified_tests) == 0 and len(added_tests) == 0:
+        # Return a special marker for "run all fe tests"
+        print(json.dumps({"modified": ["fe-core:ALL"], "added": []}))
+        return
+
+    # 4. Output JSON
     result = {
         "modified": sorted(list(modified_tests)),
         "added": sorted(list(added_tests))

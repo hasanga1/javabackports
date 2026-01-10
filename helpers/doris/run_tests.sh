@@ -12,17 +12,29 @@ elif [ "${TEST_TARGETS}" == "NONE" ]; then
     echo "No relevant source code changes found. Skipping tests."
     exit 0
 else
-    # TEST_TARGETS is a space-separated list of "module:class"
-    # Example: fe:org.apache.doris.FooTest be:org.apache.doris.BarTest
+    # TEST_TARGETS is a space-separated list of "module:class" or special markers like "fe-core:ALL"
+    # Example: fe:org.apache.doris.FooTest be:org.apache.doris.BarTest fe-core:ALL
     
     MODULES=""
     TESTS=""
+    RUN_ALL_IN_MODULE=""
     
     # Split by space
     for target in ${TEST_TARGETS}; do
         # Split by colon
         mod="${target%%:*}"
         cls="${target#*:}"
+        
+        # Check if this is a special "run all tests in module" marker
+        if [ "${cls}" == "ALL" ]; then
+            # Add this module and run all tests in it
+            if [ -z "$RUN_ALL_IN_MODULE" ]; then
+                RUN_ALL_IN_MODULE="$mod"
+            else
+                RUN_ALL_IN_MODULE="$RUN_ALL_IN_MODULE,$mod"
+            fi
+            continue
+        fi
         
         # Append to lists (comma separated)
         if [ -z "$MODULES" ]; then
@@ -41,7 +53,13 @@ else
         fi
     done
     
-    MAVEN_ARGS="-pl ${MODULES} -Dtest=${TESTS}"
+    # Build MAVEN_ARGS
+    if [ -n "$RUN_ALL_IN_MODULE" ]; then
+        # Run all tests in these modules
+        MAVEN_ARGS="-pl ${RUN_ALL_IN_MODULE}"
+    elif [ -n "$MODULES" ]; then
+        MAVEN_ARGS="-pl ${MODULES} -Dtest=${TESTS}"
+    fi
 fi
 
 echo "--- Starting Test Execution ---"
