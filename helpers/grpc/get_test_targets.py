@@ -20,9 +20,13 @@ def find_module_for_file(repo, filepath):
 
 def extract_test_class(filepath):
     """Extract the fully qualified test class name from a test file path."""
-    if "/src/test/java/" not in filepath:
+    # Accept both src/test/java and src/androidTest/java
+    if "/src/test/java/" in filepath:
+        rel = filepath.split("/src/test/java/")[-1]
+    elif "/src/androidTest/java/" in filepath:
+        rel = filepath.split("/src/androidTest/java/")[-1]
+    else:
         return None
-    rel = filepath.split("/src/test/java/")[-1]
     if not rel.endswith("Test.java"):
         return None
     return rel[:-5].replace("/", ".")  # Remove .java, convert to FQCN
