@@ -84,7 +84,7 @@ PROJECT_CONFIG = {
     },
     "hibernate-orm": {
         "repo_dir": "hibernate-orm",
-        "report_pattern": "**/build/test-results/**/*.xml",
+        "report_pattern": "**/build/**/*.xml",
         "builder_tag": "hibernate-builder:latest",
         "build_system": "gradle"
     },

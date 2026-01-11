@@ -7,12 +7,12 @@ echo "Target: ${TEST_TARGETS}"
 IMAGE_TAG="${IMAGE_TAG_TO_BUILD:-hibernate-orm-${COMMIT_SHA:0:7}}"
 
 if [ "${TEST_TARGETS}" == "ALL" ]; then
-    GRADLE_CMD="./gradlew test"
+    GRADLE_CMD="./gradlew test --rerun-tasks"
 elif [ "${TEST_TARGETS}" == "NONE" ]; then
     echo "No relevant source code changes found. Skipping tests."
     exit 0
 else
-    GRADLE_CMD="./gradlew ${TEST_TARGETS}"
+    GRADLE_CMD="./gradlew ${TEST_TARGETS} --rerun-tasks"
 fi
 
 DOCKER_CMD="docker"
@@ -30,6 +30,8 @@ if ${DOCKER_CMD} run --rm \
     bash -c "set -e; \
     git config --global --add safe.directory /repo; \
     ${GRADLE_CMD}; \
+    echo "--- Debug: finding build directories ---"; \
+    find /repo -type d -name "build" -maxdepth 3; \
     echo "--- Debug: Listing all XML files ---"; \
     find /repo -name "*.xml"; \
     exit \$?"; then
