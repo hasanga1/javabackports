@@ -30,6 +30,8 @@ if ${DOCKER_CMD} run --rm \
     bash -c "set -e; \
     git config --global --add safe.directory /repo; \
     ${GRADLE_CMD}; \
+    echo "--- Debug: Listing all XML files ---"; \
+    find /repo -name "*.xml"; \
     exit \$?"; then
     echo "✅ Tests Passed"
     exit 0
