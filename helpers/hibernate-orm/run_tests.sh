@@ -4,7 +4,7 @@ set -e
 echo "=== Running Tests for ${COMMIT_SHA:0:7} ==="
 echo "Target: ${TEST_TARGETS}"
 
-IMAGE_TAG="${IMAGE_TAG:-hibernate-orm-${BUILD_TYPE}-${COMMIT_SHA:0:7}}"
+IMAGE_TAG="${IMAGE_TAG_TO_BUILD:-hibernate-orm-${COMMIT_SHA:0:7}}"
 
 if [ "${TEST_TARGETS}" == "ALL" ]; then
     GRADLE_CMD="./gradlew test"
