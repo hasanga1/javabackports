@@ -6,17 +6,19 @@ import os
 import json
 
 def find_module_for_file(repo, filepath):
-    """Find the Maven module (directory with pom.xml) for a given file."""
+    """Find the module (directory with pom.xml or build.gradle) for a given file. Fallback to test file's directory."""
     current_dir = os.path.dirname(filepath) if filepath else ""
     while current_dir:
         pom_path = os.path.join(repo, current_dir, "pom.xml")
-        if os.path.exists(pom_path):
+        gradle_path = os.path.join(repo, current_dir, "build.gradle")
+        if os.path.exists(pom_path) or os.path.exists(gradle_path):
             return current_dir
         parent = os.path.dirname(current_dir)
         if parent == current_dir:
             break
         current_dir = parent
-    return None
+    # Fallback: use the directory containing the test file
+    return os.path.dirname(filepath) if filepath else None
 
 def extract_test_class(filepath):
     """Extract the fully qualified test class name from a test file path."""
