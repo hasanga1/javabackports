@@ -7,7 +7,18 @@ RUN apt-get update && apt-get install -y \
     git \
     python3 \
     unzip \
+    curl \
     && rm -rf /var/lib/apt/lists/*
+
+# Install OpenJDK 25.0.1
+RUN curl -L "https://download.java.net/java/GA/jdk25.0.1/2fbf10d8c78e40bd87641c434705079d/8/GPL/openjdk-25.0.1_linux-x64_bin.tar.gz" -o /tmp/jdk25.tar.gz && \
+    mkdir -p /opt/java && \
+    tar -xzf /tmp/jdk25.tar.gz -C /opt/java && \
+    mv /opt/java/jdk-25.0.1 /opt/java/jdk-25 && \
+    rm /tmp/jdk25.tar.gz
+
+ENV JAVA_HOME=/opt/java/jdk-25
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Create a non-root user 'gradle'
 RUN groupadd --gid 1000 gradle && \
