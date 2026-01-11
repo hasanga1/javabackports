@@ -1,0 +1,2957 @@
+[
+  {
+    "index": 21,
+    "commit": "3a1e059a722c73184b9a2b2c5f2a7eed5fc17fcf",
+    "parent": "77a5421a91a55faf69e105b0964ccb8aedabd53b",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/util/concurrent/tck/ForkJoinPoolTest.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/util/concurrent/tck/ForkJoinPoolTest.java"
+      ],
+      "all": "test/jdk/java/util/concurrent/tck/ForkJoinPoolTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.java.util.concurrent.tck.ForkJoinPoolTest.java"
+      ],
+      "all_failures_after": [
+        "jdk.java.util.concurrent.tck.ForkJoinPoolTest.java"
+      ],
+      "all_failures_before": [
+        "jdk.java.util.concurrent.tck.ForkJoinPoolTest.java"
+      ]
+    }
+  },
+  {
+    "index": 39,
+    "commit": "b4041e3e2222f78cb8c5c85ac2db6b30aaa3c390",
+    "parent": "11015ddbff70ea1242648408ca6c5c96fd57f4b1",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/langtools/tools/javac/patterns/T8358801.java"
+      ],
+      "modified_files": [],
+      "all": "test/langtools/tools/javac/patterns/T8358801.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "toolsc.patterns.T8358801",
+        "langtools.tools.javac.patterns.T8358801.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 40,
+    "commit": "11015ddbff70ea1242648408ca6c5c96fd57f4b1",
+    "parent": "977876032e34dd4456016250ae1f25e5409a91df",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/security/KeyStore/TestDisabledAlgorithms.java",
+        "test/jdk/java/security/MessageDigest/TestDisabledAlgorithms.java",
+        "test/jdk/java/security/Signature/TestDisabledAlgorithms.java",
+        "test/jdk/javax/crypto/Cipher/TestDisabledAlgorithms.java",
+        "test/jdk/sun/security/pkcs11/Cipher/TestDisabledAlgorithms.java",
+        "test/jdk/sun/security/pkcs11/Signature/TestNONEwithRSA.java",
+        "test/jdk/sun/security/util/AlgorithmConstraints/InvalidCryptoDisabledAlgos.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/security/KeyStore/TestDisabledAlgorithms.java test/jdk/java/security/MessageDigest/TestDisabledAlgorithms.java test/jdk/java/security/Signature/TestDisabledAlgorithms.java test/jdk/javax/crypto/Cipher/TestDisabledAlgorithms.java test/jdk/sun/security/pkcs11/Cipher/TestDisabledAlgorithms.java test/jdk/sun/security/pkcs11/Signature/TestNONEwithRSA.java test/jdk/sun/security/util/AlgorithmConstraints/InvalidCryptoDisabledAlgos.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 14,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 14
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.security.Signature.TestDisabledAlgorithms",
+        "java.security.MessageDigest.TestDisabledAlgorithms",
+        "sun.security.util.AlgorithmConstraints.InvalidCryptoDisabledAlgos",
+        "jdk.java.security.MessageDigest.TestDisabledAlgorithms.java",
+        "jdk.sun.security.pkcs11.Cipher.TestDisabledAlgorithms.java",
+        "javax.crypto.Cipher.TestDisabledAlgorithms",
+        "jdk.java.security.Signature.TestDisabledAlgorithms.java",
+        "jdk.sun.security.pkcs11.Signature.TestNONEwithRSA.java",
+        "jdk.javax.crypto.Cipher.TestDisabledAlgorithms.java",
+        "sun.security.pkcs11.Signature.TestNONEwithRSA",
+        "java.security.KeyStore.TestDisabledAlgorithms",
+        "sun.security.pkcs11.Cipher.TestDisabledAlgorithms",
+        "jdk.java.security.KeyStore.TestDisabledAlgorithms.java",
+        "jdk.sun.security.util.AlgorithmConstraints.InvalidCryptoDisabledAlgos.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 41,
+    "commit": "977876032e34dd4456016250ae1f25e5409a91df",
+    "parent": "cb7fb728d4805ed4e9d62ce31cee7c948f3d5746",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/awt/Frame/BogusFocusableWindowState/BogusFocusableWindowState.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/awt/Frame/BogusFocusableWindowState/BogusFocusableWindowState.java"
+      ],
+      "all": "test/jdk/java/awt/Frame/BogusFocusableWindowState/BogusFocusableWindowState.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.java.awt.Frame.BogusFocusableWindowState.BogusFocusableWindowState.java"
+      ],
+      "all_failures_after": [
+        "jdk.java.awt.Frame.BogusFocusableWindowState.BogusFocusableWindowState.java"
+      ],
+      "all_failures_before": [
+        "jdk.java.awt.Frame.BogusFocusableWindowState.BogusFocusableWindowState.java"
+      ]
+    }
+  },
+  {
+    "index": 43,
+    "commit": "77f9c42bf51c9bfd4bbab46a8ccc5a724d1e26e3",
+    "parent": "1870cdec268b5d72e0b51b625b20715b089d08a5",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/langtools/jdk/javadoc/doclet/testHtmlLandmarkRegions/TestHtmlLandmarkRegions.java",
+        "test/langtools/jdk/javadoc/doclet/testHtmlVersion/TestHtmlVersion.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/langtools/jdk/javadoc/doclet/testHtmlLandmarkRegions/TestHtmlLandmarkRegions.java",
+        "test/langtools/jdk/javadoc/doclet/testHtmlVersion/TestHtmlVersion.java"
+      ],
+      "all": "test/langtools/jdk/javadoc/doclet/testHtmlLandmarkRegions/TestHtmlLandmarkRegions.java test/langtools/jdk/javadoc/doclet/testHtmlVersion/TestHtmlVersion.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 0,
+      "before_pass_count": 4,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 51,
+    "commit": "a46c70dfe94cccb8b6d264ed49f6c733c3c380ac",
+    "parent": "b41a9ed7579d31d083d7aeac3609aee5a8826f14",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/hotspot/jtreg/serviceability/attach/RemovingUnixDomainSocketTest.java",
+        "test/hotspot/jtreg/serviceability/sa/ClhsdbJstackXcompStress.java",
+        "test/hotspot/jtreg/serviceability/sa/JhsdbThreadInfoTest.java",
+        "test/hotspot/jtreg/serviceability/sa/TestJhsdbJstackLock.java"
+      ],
+      "added": [
+        "test/hotspot/jtreg/serviceability/sa/LingeredAppWithVirtualThread.java",
+        "test/hotspot/jtreg/serviceability/sa/TestJhsdbJstackWithVirtualThread.java"
+      ],
+      "modified_files": [
+        "test/hotspot/jtreg/serviceability/attach/RemovingUnixDomainSocketTest.java",
+        "test/hotspot/jtreg/serviceability/sa/ClhsdbJstackXcompStress.java",
+        "test/hotspot/jtreg/serviceability/sa/JhsdbThreadInfoTest.java",
+        "test/hotspot/jtreg/serviceability/sa/TestJhsdbJstackLock.java"
+      ],
+      "all": "test/hotspot/jtreg/serviceability/attach/RemovingUnixDomainSocketTest.java test/hotspot/jtreg/serviceability/sa/ClhsdbJstackXcompStress.java test/hotspot/jtreg/serviceability/sa/JhsdbThreadInfoTest.java test/hotspot/jtreg/serviceability/sa/TestJhsdbJstackLock.java test/hotspot/jtreg/serviceability/sa/LingeredAppWithVirtualThread.java test/hotspot/jtreg/serviceability/sa/TestJhsdbJstackWithVirtualThread.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 5,
+      "before_pass_count": 2,
+      "before_fail_count": 3,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "hotspot.jtreg.serviceability.sa.JhsdbThreadInfoTest.java",
+        "hotspot.jtreg.serviceability.sa.TestJhsdbJstackLock.java",
+        "hotspot.jtreg.serviceability.sa.ClhsdbJstackXcompStress.java"
+      ],
+      "all_failures_after": [
+        "hotspot.jtreg.serviceability.sa.JhsdbThreadInfoTest.java",
+        "hotspot.jtreg.serviceability.sa.ClhsdbJstackXcompStress.java",
+        "hotspot.jtreg.serviceability.sa.LingeredAppWithVirtualThread.java",
+        "hotspot.jtreg.serviceability.sa.TestJhsdbJstackLock.java",
+        "hotspot.jtreg.serviceability.sa.TestJhsdbJstackWithVirtualThread.java"
+      ],
+      "all_failures_before": [
+        "hotspot.jtreg.serviceability.sa.JhsdbThreadInfoTest.java",
+        "hotspot.jtreg.serviceability.sa.TestJhsdbJstackLock.java",
+        "hotspot.jtreg.serviceability.sa.ClhsdbJstackXcompStress.java"
+      ]
+    }
+  },
+  {
+    "index": 54,
+    "commit": "dcd89eb9b1dfe6fd60370731b4f94b1ec6d0d359",
+    "parent": "4b7defbae9d9639c7a52ed5a4cbbba1ce7bb4b9d",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/util/concurrent/forkjoin/ContextClassLoaderTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/util/concurrent/forkjoin/ContextClassLoaderTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.util.concurrent.forkjoin.ContextClassLoaderTest",
+        "jdk.java.util.concurrent.forkjoin.ContextClassLoaderTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 69,
+    "commit": "1bb9ea9c885796d8d32fe1a45e59267ef60840d1",
+    "parent": "d306ab95729416ac20829f109f3df73fba7cf77c",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/hotspot/jtreg/compiler/jvmci/common/patches/jdk.internal.vm.ci/jdk/vm/ci/hotspot/CompilerToVMHelper.java",
+        "test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/SimpleCodeInstallationTest.java",
+        "test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/TestHotSpotVMConfig.java"
+      ],
+      "added": [
+        "test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/CodeInvalidationReasonTest.java"
+      ],
+      "modified_files": [
+        "test/hotspot/jtreg/compiler/jvmci/common/patches/jdk.internal.vm.ci/jdk/vm/ci/hotspot/CompilerToVMHelper.java",
+        "test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/SimpleCodeInstallationTest.java",
+        "test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/TestHotSpotVMConfig.java"
+      ],
+      "all": "test/hotspot/jtreg/compiler/jvmci/common/patches/jdk.internal.vm.ci/jdk/vm/ci/hotspot/CompilerToVMHelper.java test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/SimpleCodeInstallationTest.java test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/TestHotSpotVMConfig.java test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/CodeInvalidationReasonTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 2,
+      "before_pass_count": 2,
+      "before_fail_count": 2,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "hotspot.jtreg.compiler.jvmci.jdk.vm.ci.code.src.jdk.vm.ci.code.CodeInvalidationReasonTest.java",
+        "compiler.jvmci.jdk.vm.ci.code.test.src.jdk.vm.ci.code.test.CodeInvalidationReasonTest"
+      ],
+      "persistent_failures": [
+        "hotspot.jtreg.compiler.jvmci.jdk.vm.ci.code.src.jdk.vm.ci.code.TestHotSpotVMConfig.java",
+        "hotspot.jtreg.compiler.jvmci.common.patches.jdk.internal.vm.ci.jdk.vm.ci.hotspot.CompilerToVMHelper.java"
+      ],
+      "all_failures_after": [
+        "hotspot.jtreg.compiler.jvmci.jdk.vm.ci.code.src.jdk.vm.ci.code.TestHotSpotVMConfig.java",
+        "hotspot.jtreg.compiler.jvmci.common.patches.jdk.internal.vm.ci.jdk.vm.ci.hotspot.CompilerToVMHelper.java"
+      ],
+      "all_failures_before": [
+        "hotspot.jtreg.compiler.jvmci.jdk.vm.ci.code.src.jdk.vm.ci.code.TestHotSpotVMConfig.java",
+        "hotspot.jtreg.compiler.jvmci.common.patches.jdk.internal.vm.ci.jdk.vm.ci.hotspot.CompilerToVMHelper.java"
+      ]
+    }
+  },
+  {
+    "index": 79,
+    "commit": "c03914817da13ae0bab37a35d94b3569a19964b1",
+    "parent": "3da62237a766510d9efbde9400092c61b2a53ba0",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/text/Format/NumberFormat/NumberRegression.java"
+      ],
+      "added": [
+        "test/jdk/java/text/Format/DecimalFormat/RoundingTiesNearZeroTest.java"
+      ],
+      "modified_files": [
+        "test/jdk/java/text/Format/NumberFormat/NumberRegression.java"
+      ],
+      "all": "test/jdk/java/text/Format/NumberFormat/NumberRegression.java test/jdk/java/text/Format/DecimalFormat/RoundingTiesNearZeroTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.text.Format.DecimalFormat.RoundingTiesNearZeroTest",
+        "jdk.java.text.Format.DecimalFormat.RoundingTiesNearZeroTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 81,
+    "commit": "af080e104fcb45626cdcb845014c31c4abaf33ac",
+    "parent": "e33a4593c37d87b284c58173409133fc22507917",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/util/concurrent/DelayScheduler/AscendingOrderAfterReplace.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/util/concurrent/DelayScheduler/AscendingOrderAfterReplace.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.java.util.concurrent.DelayScheduler.AscendingOrderAfterReplace.java",
+        "java.util.concurrent.DelayScheduler.AscendingOrderAfterReplace"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 85,
+    "commit": "2ed77bee88c4f17f58e01d80237472dd14613494",
+    "parent": "ddc7a00d88094d1aa886312007ae36bcbc4056cc",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/awt/font/GlyphVector/GetGlyphCharIndexTest.java"
+      ],
+      "added": [
+        "test/jdk/java/awt/font/LineBreakMeasurer/KhmerLineBreakTest.java"
+      ],
+      "modified_files": [
+        "test/jdk/java/awt/font/GlyphVector/GetGlyphCharIndexTest.java"
+      ],
+      "all": "test/jdk/java/awt/font/GlyphVector/GetGlyphCharIndexTest.java test/jdk/java/awt/font/LineBreakMeasurer/KhmerLineBreakTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.awt.font.LineBreakMeasurer.KhmerLineBreakTest",
+        "jdk.java.awt.font.LineBreakMeasurer.KhmerLineBreakTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 100,
+    "commit": "fc2f115d2d8721725fec27a8de7e8201fcd44486",
+    "parent": "96dc209747e695784f75c6de0cb4039df3b9208a",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/util/Calendar/RollHoursTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/util/Calendar/RollHoursTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.util.Calendar.RollHoursTest",
+        "jdk.java.util.Calendar.RollHoursTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 101,
+    "commit": "96dc209747e695784f75c6de0cb4039df3b9208a",
+    "parent": "96906db79bc83ef1d83d7d645c18fe34a2bd861c",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/text/Format/CompactNumberFormat/TestClone.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/text/Format/CompactNumberFormat/TestClone.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.java.text.Format.CompactNumberFormat.TestClone.java",
+        "java.text.Format.CompactNumberFormat.TestClone"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 119,
+    "commit": "8fd9a739c895d7f0f860a8170d22cb50574abc79",
+    "parent": "816cfbfa06c622ec5189b7a127255436698e2297",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/tools/jpackage/macosx/MacSignTest.java",
+        "test/jdk/tools/jpackage/macosx/base/SigningBase.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/tools/jpackage/macosx/MacSignTest.java",
+        "test/jdk/tools/jpackage/macosx/base/SigningBase.java"
+      ],
+      "all": "test/jdk/tools/jpackage/macosx/MacSignTest.java test/jdk/tools/jpackage/macosx/base/SigningBase.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 2,
+      "before_pass_count": 0,
+      "before_fail_count": 2,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.tools.jpackage.macosx.MacSignTest.java",
+        "jdk.tools.jpackage.macosx.base.SigningBase.java"
+      ],
+      "all_failures_after": [
+        "jdk.tools.jpackage.macosx.MacSignTest.java",
+        "jdk.tools.jpackage.macosx.base.SigningBase.java"
+      ],
+      "all_failures_before": [
+        "jdk.tools.jpackage.macosx.MacSignTest.java",
+        "jdk.tools.jpackage.macosx.base.SigningBase.java"
+      ]
+    }
+  },
+  {
+    "index": 121,
+    "commit": "44ca0caba38e30eae6de4e3a571192f48c567dad",
+    "parent": "89c5659aa88acd1e9624aa14e5b9757255e55916",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/javax/swing/JMenuItem/RightLeftOrientation.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/javax/swing/JMenuItem/RightLeftOrientation.java"
+      ],
+      "all": "test/jdk/javax/swing/JMenuItem/RightLeftOrientation.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.javax.swing.JMenuItem.RightLeftOrientation.java"
+      ],
+      "all_failures_after": [
+        "jdk.javax.swing.JMenuItem.RightLeftOrientation.java"
+      ],
+      "all_failures_before": [
+        "jdk.javax.swing.JMenuItem.RightLeftOrientation.java"
+      ]
+    }
+  },
+  {
+    "index": 137,
+    "commit": "0a6cbb7b5ee29329a168180b96b33c775b2adaa3",
+    "parent": "1df2f556db62384a74e2f40c480c3aaeace20d5b",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/util/concurrent/tck/CompletableFutureTest.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/util/concurrent/tck/CompletableFutureTest.java"
+      ],
+      "all": "test/jdk/java/util/concurrent/tck/CompletableFutureTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.java.util.concurrent.tck.CompletableFutureTest.java"
+      ],
+      "all_failures_after": [
+        "jdk.java.util.concurrent.tck.CompletableFutureTest.java"
+      ],
+      "all_failures_before": [
+        "jdk.java.util.concurrent.tck.CompletableFutureTest.java"
+      ]
+    }
+  },
+  {
+    "index": 141,
+    "commit": "07af85cbda7ae3fe832adf6250b6d638b9469465",
+    "parent": "26c856f505e8389d39575a5cf7c7cf28773a49ae",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/net/CookieStoreTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/net/CookieStoreTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.java.net.CookieStoreTest.java",
+        "java.net.CookieStoreTest"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 146,
+    "commit": "9018319c0e27923a5660853a30175b1fcfd7b8d7",
+    "parent": "a428b6bf6c368644aa0c2bc9ce70574db39d8cf0",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/util/concurrent/Executors/AutoShutdown.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/util/concurrent/Executors/AutoShutdown.java"
+      ],
+      "all": "test/jdk/java/util/concurrent/Executors/AutoShutdown.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 161,
+    "commit": "38fd7944e98ddeae76d29fb37d2359a8b7c2d006",
+    "parent": "702e30ebdf31e54a27ea35a964361c31a1d0f495",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/jdk/jfr/jmx/streaming/TestEnableDisable.java"
+      ],
+      "added": [
+        "test/jdk/jdk/jfr/jmx/streaming/TestWithers.java"
+      ],
+      "modified_files": [
+        "test/jdk/jdk/jfr/jmx/streaming/TestEnableDisable.java"
+      ],
+      "all": "test/jdk/jdk/jfr/jmx/streaming/TestEnableDisable.java test/jdk/jdk/jfr/jmx/streaming/TestWithers.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.jdk.jfr.jmx.streaming.TestWithers.java",
+        "jdk.jfr.jmx.streaming.TestWithers"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 163,
+    "commit": "28eaab4297169d71e672a87c08444ec2aa244195",
+    "parent": "b8aa130bab715f187476181acc5021b27958833f",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/util/TimeZone/SimpleTimeZoneEqualsHashCodeTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/util/TimeZone/SimpleTimeZoneEqualsHashCodeTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.java.util.TimeZone.SimpleTimeZoneEqualsHashCodeTest.java",
+        "java.util.TimeZone.SimpleTimeZoneEqualsHashCodeTest"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 165,
+    "commit": "a875f32a00b62d07363a83ead77e5bc34fe11b6c",
+    "parent": "368e829f281befe597e7b123d400f9fcb5a71f20",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/javax/net/ssl/DTLS/FragmentedFinished.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/javax/net/ssl/DTLS/FragmentedFinished.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "javax.net.ssl.DTLS.FragmentedFinished",
+        "jdk.javax.net.ssl.DTLS.FragmentedFinished.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 166,
+    "commit": "368e829f281befe597e7b123d400f9fcb5a71f20",
+    "parent": "a1d5dd1f4a50dd4fedde8b4f9aa999d89b7e4200",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/awt/color/ICC_Profile/ValidateICCHeaderData/ValidateICCHeaderData.java"
+      ],
+      "added": [
+        "test/jdk/java/awt/color/ICC_Profile/Serialization/SerializationSpecTest/SerializationSpecTest.java",
+        "test/jdk/java/awt/color/ICC_Profile/Serialization/StandardProfilesRoundTrip.java"
+      ],
+      "modified_files": [
+        "test/jdk/java/awt/color/ICC_Profile/ValidateICCHeaderData/ValidateICCHeaderData.java"
+      ],
+      "all": "test/jdk/java/awt/color/ICC_Profile/ValidateICCHeaderData/ValidateICCHeaderData.java test/jdk/java/awt/color/ICC_Profile/Serialization/SerializationSpecTest/SerializationSpecTest.java test/jdk/java/awt/color/ICC_Profile/Serialization/StandardProfilesRoundTrip.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 6,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 4
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.awt.color.ICC_Profile.Serialization.StandardProfilesRoundTrip",
+        "jdk.java.awt.color.ICC_Profile.Serialization.StandardProfilesRoundTrip.java",
+        "jdk.java.awt.color.ICC_Profile.Serialization.SerializationSpecTest.SerializationSpecTest.java",
+        "java.awt.color.ICC_Profile.Serialization.SerializationSpecTest.SerializationSpecTest"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 172,
+    "commit": "d4a7d0dae9c1898856ecd39f6484dad413625382",
+    "parent": "8df7dd1c01490edd6591a9bbc1f97a4d4fad77a9",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/jdk/jfr/event/tracing/TestMethodTrace.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/jdk/jfr/event/tracing/TestMethodTrace.java"
+      ],
+      "all": "test/jdk/jdk/jfr/event/tracing/TestMethodTrace.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 185,
+    "commit": "1bb4af873a3cb7ad1e404cbd18c7784a0bbce62a",
+    "parent": "8317086129e1b74db087094ddaebf0e6f68616c1",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/tools/jpackage/apps/PrintEnv.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/AdditionalLauncher.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/AppImageFile.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/CommandArguments.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/ConfigFilesStasher.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/JPackageCommand.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherAsServiceVerifier.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherIconVerifier.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LinuxHelper.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MacHelper.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MacSignVerify.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/PackageTest.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/WindowsHelper.java",
+        "test/jdk/tools/jpackage/junit/share/jdk.jpackage/jdk/jpackage/internal/util/PListReaderTest.java",
+        "test/jdk/tools/jpackage/linux/UpgradeTest.java",
+        "test/jdk/tools/jpackage/macosx/MacFileAssociationsTest.java",
+        "test/jdk/tools/jpackage/share/AddLShortcutTest.java",
+        "test/jdk/tools/jpackage/share/AddLauncherTest.java",
+        "test/jdk/tools/jpackage/share/PerUserCfgTest.java"
+      ],
+      "added": [
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherShortcut.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherVerifier.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MsiDatabase.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/WinShortcutVerifier.java"
+      ],
+      "modified_files": [
+        "test/jdk/tools/jpackage/apps/PrintEnv.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/AdditionalLauncher.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/AppImageFile.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/CommandArguments.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/ConfigFilesStasher.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/JPackageCommand.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherAsServiceVerifier.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherIconVerifier.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LinuxHelper.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MacHelper.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MacSignVerify.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/PackageTest.java",
+        "test/jdk/tools/jpackage/helpers/jdk/jpackage/test/WindowsHelper.java",
+        "test/jdk/tools/jpackage/junit/share/jdk.jpackage/jdk/jpackage/internal/util/PListReaderTest.java",
+        "test/jdk/tools/jpackage/linux/UpgradeTest.java",
+        "test/jdk/tools/jpackage/macosx/MacFileAssociationsTest.java",
+        "test/jdk/tools/jpackage/share/AddLShortcutTest.java",
+        "test/jdk/tools/jpackage/share/AddLauncherTest.java",
+        "test/jdk/tools/jpackage/share/PerUserCfgTest.java"
+      ],
+      "all": "test/jdk/tools/jpackage/apps/PrintEnv.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/AdditionalLauncher.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/AppImageFile.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/CommandArguments.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/ConfigFilesStasher.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/JPackageCommand.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherAsServiceVerifier.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherIconVerifier.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LinuxHelper.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MacHelper.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MacSignVerify.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/PackageTest.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/WindowsHelper.java test/jdk/tools/jpackage/junit/share/jdk.jpackage/jdk/jpackage/internal/util/PListReaderTest.java test/jdk/tools/jpackage/linux/UpgradeTest.java test/jdk/tools/jpackage/macosx/MacFileAssociationsTest.java test/jdk/tools/jpackage/share/AddLShortcutTest.java test/jdk/tools/jpackage/share/AddLauncherTest.java test/jdk/tools/jpackage/share/PerUserCfgTest.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherShortcut.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/LauncherVerifier.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/MsiDatabase.java test/jdk/tools/jpackage/helpers/jdk/jpackage/test/WinShortcutVerifier.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 22,
+      "before_pass_count": 2,
+      "before_fail_count": 18,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.tools.jpackage.linux.UpgradeTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.PackageTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LinuxHelper.java",
+        "jdk.tools.jpackage.share.AddLShortcutTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.JPackageCommand.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherAsServiceVerifier.java",
+        "jdk.tools.jpackage.share.PerUserCfgTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.MacHelper.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.MacSignVerify.java",
+        "jdk.tools.jpackage.apps.PrintEnv.java",
+        "jdk.tools.jpackage.share.AddLauncherTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.WindowsHelper.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.AppImageFile.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.ConfigFilesStasher.java",
+        "jdk.tools.jpackage.macosx.MacFileAssociationsTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.CommandArguments.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.AdditionalLauncher.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherIconVerifier.java"
+      ],
+      "all_failures_after": [
+        "jdk.tools.jpackage.linux.UpgradeTest.java",
+        "jdk.tools.jpackage.share.PerUserCfgTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.WinShortcutVerifier.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.MsiDatabase.java",
+        "jdk.tools.jpackage.apps.PrintEnv.java",
+        "jdk.tools.jpackage.macosx.MacFileAssociationsTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.CommandArguments.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherIconVerifier.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.PackageTest.java",
+        "jdk.tools.jpackage.share.AddLShortcutTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherShortcut.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.JPackageCommand.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.MacSignVerify.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.WindowsHelper.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.AppImageFile.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LinuxHelper.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherVerifier.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherAsServiceVerifier.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.MacHelper.java",
+        "jdk.tools.jpackage.share.AddLauncherTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.ConfigFilesStasher.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.AdditionalLauncher.java"
+      ],
+      "all_failures_before": [
+        "jdk.tools.jpackage.linux.UpgradeTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LinuxHelper.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.PackageTest.java",
+        "jdk.tools.jpackage.share.AddLShortcutTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.JPackageCommand.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherAsServiceVerifier.java",
+        "jdk.tools.jpackage.share.PerUserCfgTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.MacHelper.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.MacSignVerify.java",
+        "jdk.tools.jpackage.apps.PrintEnv.java",
+        "jdk.tools.jpackage.share.AddLauncherTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.WindowsHelper.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.AppImageFile.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.ConfigFilesStasher.java",
+        "jdk.tools.jpackage.macosx.MacFileAssociationsTest.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.CommandArguments.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.AdditionalLauncher.java",
+        "jdk.tools.jpackage.helpers.jdk.jpackage.LauncherIconVerifier.java"
+      ]
+    }
+  },
+  {
+    "index": 246,
+    "commit": "1a69c6b56afbabd1a63d364618a3566bcfb23a45",
+    "parent": "9f2d753643d91c0abecdc2541986887613607a17",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/javax/swing/JFileChooser/HTMLFileName.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/javax/swing/JFileChooser/HTMLFileName.java"
+      ],
+      "all": "test/jdk/javax/swing/JFileChooser/HTMLFileName.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.javax.swing.JFileChooser.HTMLFileName.java"
+      ],
+      "all_failures_after": [
+        "jdk.javax.swing.JFileChooser.HTMLFileName.java"
+      ],
+      "all_failures_before": [
+        "jdk.javax.swing.JFileChooser.HTMLFileName.java"
+      ]
+    }
+  },
+  {
+    "index": 291,
+    "commit": "cadbc36a54c62aedb84dd6c042f6f68e9ca61502",
+    "parent": "b1cdae022fc3cad4dbafe2fef45aeaea430a83e5",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/jdk/jfr/api/flightrecorder/TestSettingsControl.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/jdk/jfr/api/flightrecorder/TestSettingsControl.java"
+      ],
+      "all": "test/jdk/jdk/jfr/api/flightrecorder/TestSettingsControl.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 293,
+    "commit": "81bf87878330a704a313886e3f273b581064d2cb",
+    "parent": "3e4dff338790e11832a3803c84a99e75a129fa22",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/sun/java2d/cmm/ColorConvertOp/FilterSemiCustomImages.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/sun/java2d/cmm/ColorConvertOp/FilterSemiCustomImages.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "sun2d.cmm.ColorConvertOp.FilterSemiCustomImages",
+        "jdk.sun.java2d.cmm.ColorConvertOp.FilterSemiCustomImages.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 301,
+    "commit": "b32786a434e9bfb574b6be38a89bad71efd09772",
+    "parent": "747ad8bdf1e5fea8ce3752c0c25fdf6d1f99e31b",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/micro/org/openjdk/bench/java/lang/ScopedValues.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/micro/org/openjdk/bench/java/lang/ScopedValues.java"
+      ],
+      "all": "test/micro/org/openjdk/bench/java/lang/ScopedValues.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "micro.org.openjdk.bench.java.lang.ScopedValues.java"
+      ],
+      "all_failures_after": [
+        "micro.org.openjdk.bench.java.lang.ScopedValues.java"
+      ],
+      "all_failures_before": [
+        "micro.org.openjdk.bench.java.lang.ScopedValues.java"
+      ]
+    }
+  },
+  {
+    "index": 308,
+    "commit": "06c3858070d1267cae63cdae22e0b492e21298ff",
+    "parent": "e5762b14422315757078abb73b119126f39f7261",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/lang/invoke/MethodTypeTest.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/lang/invoke/MethodTypeTest.java"
+      ],
+      "all": "test/jdk/java/lang/invoke/MethodTypeTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 309,
+    "commit": "e5762b14422315757078abb73b119126f39f7261",
+    "parent": "a7c57e14fd24cdfffe5dde5426e2d411388a5915",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/awt/image/XBMDecoder/XBMDecoderTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/awt/image/XBMDecoder/XBMDecoderTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.awt.image.XBMDecoder.XBMDecoderTest",
+        "jdk.java.awt.image.XBMDecoder.XBMDecoderTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 318,
+    "commit": "111fcc31158ca17337f4b6254541b95481263cfd",
+    "parent": "78972ee8598de1f79901041bafb8fc6a83452fed",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/nio/Buffer/AllocateDirectInit.java"
+      ],
+      "added": [
+        "test/micro/org/openjdk/bench/java/nio/DirectByteBufferAlloc.java"
+      ],
+      "modified_files": [
+        "test/jdk/java/nio/Buffer/AllocateDirectInit.java"
+      ],
+      "all": "test/jdk/java/nio/Buffer/AllocateDirectInit.java test/micro/org/openjdk/bench/java/nio/DirectByteBufferAlloc.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 1,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [
+        "micro.org.openjdk.bench.java.nio.DirectByteBufferAlloc.java"
+      ],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 319,
+    "commit": "78972ee8598de1f79901041bafb8fc6a83452fed",
+    "parent": "a93fadb15698a1da4fc5ebf2222a5432cd68d632",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/javax/swing/border/LineBorder/ScaledLineBorderTest.java",
+        "test/jdk/javax/swing/border/LineBorder/ScaledTextFieldBorderTest.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/javax/swing/border/LineBorder/ScaledLineBorderTest.java",
+        "test/jdk/javax/swing/border/LineBorder/ScaledTextFieldBorderTest.java"
+      ],
+      "all": "test/jdk/javax/swing/border/LineBorder/ScaledLineBorderTest.java test/jdk/javax/swing/border/LineBorder/ScaledTextFieldBorderTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 2,
+      "before_pass_count": 0,
+      "before_fail_count": 2,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.javax.swing.border.LineBorder.ScaledLineBorderTest.java",
+        "jdk.javax.swing.border.LineBorder.ScaledTextFieldBorderTest.java"
+      ],
+      "all_failures_after": [
+        "jdk.javax.swing.border.LineBorder.ScaledLineBorderTest.java",
+        "jdk.javax.swing.border.LineBorder.ScaledTextFieldBorderTest.java"
+      ],
+      "all_failures_before": [
+        "jdk.javax.swing.border.LineBorder.ScaledLineBorderTest.java",
+        "jdk.javax.swing.border.LineBorder.ScaledTextFieldBorderTest.java"
+      ]
+    }
+  },
+  {
+    "index": 320,
+    "commit": "a93fadb15698a1da4fc5ebf2222a5432cd68d632",
+    "parent": "4d68cf059653b8cd1888c8a0e6aecd892227662c",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/javax/swing/JPasswordField/PasswordFieldInputMapWordTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/javax/swing/JPasswordField/PasswordFieldInputMapWordTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "javax.swing.JPasswordField.PasswordFieldInputMapWordTest",
+        "jdk.javax.swing.JPasswordField.PasswordFieldInputMapWordTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 321,
+    "commit": "4d68cf059653b8cd1888c8a0e6aecd892227662c",
+    "parent": "0e1897591cd6bb562b69d078ffd9f666bc9fd090",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/awt/TextField/SetEchoCharWordOpsTest.java"
+      ],
+      "added": [
+        "test/jdk/javax/swing/plaf/basic/BasicTextUI/PasswordSelectionWordTest.java"
+      ],
+      "modified_files": [
+        "test/jdk/java/awt/TextField/SetEchoCharWordOpsTest.java"
+      ],
+      "all": "test/jdk/java/awt/TextField/SetEchoCharWordOpsTest.java test/jdk/javax/swing/plaf/basic/BasicTextUI/PasswordSelectionWordTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "javax.swing.plaf.basic.BasicTextUI.PasswordSelectionWordTest",
+        "jdk.javax.swing.plaf.basic.BasicTextUI.PasswordSelectionWordTest.java"
+      ],
+      "persistent_failures": [
+        "jdk.java.awt.TextField.SetEchoCharWordOpsTest.java"
+      ],
+      "all_failures_after": [
+        "jdk.java.awt.TextField.SetEchoCharWordOpsTest.java"
+      ],
+      "all_failures_before": [
+        "jdk.java.awt.TextField.SetEchoCharWordOpsTest.java"
+      ]
+    }
+  },
+  {
+    "index": 361,
+    "commit": "65eca342ddab30d2c8697f630d777bef4a81c20b",
+    "parent": "3f491ffa1af24ac876242a109abb71bd5d812edb",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/lang/invoke/ClassValueTest.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/lang/invoke/ClassValueTest.java"
+      ],
+      "all": "test/jdk/java/lang/invoke/ClassValueTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 362,
+    "commit": "6c48f4ed707bf0b15f9b6098de30db8aae6fa40f",
+    "parent": "73c28c2e3dc08f263be4c537c09c2763b87ca122",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/javax/swing/JMenuItem/TestRadioAndCheckMenuItemWithIcon.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/javax/swing/JMenuItem/TestRadioAndCheckMenuItemWithIcon.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [
+        "jdk.javax.swing.JMenuItem.TestRadioAndCheckMenuItemWithIcon.java"
+      ],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 380,
+    "commit": "c02fce22edc2e97ac208178cfb9d6537d4410938",
+    "parent": "99f80700d76c6a0d7e06f215e78c4aef6b16e738",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java",
+        "test/jdk/sun/security/lib/cacerts/VerifyCACerts.java",
+        "test/jdk/sun/security/ssl/X509TrustManagerImpl/distrust/Entrust.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java",
+        "test/jdk/sun/security/lib/cacerts/VerifyCACerts.java",
+        "test/jdk/sun/security/ssl/X509TrustManagerImpl/distrust/Entrust.java"
+      ],
+      "all": "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java test/jdk/sun/security/lib/cacerts/VerifyCACerts.java test/jdk/sun/security/ssl/X509TrustManagerImpl/distrust/Entrust.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 1,
+      "before_pass_count": 4,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.security.infra.java.security.cert.CertPathValidator.certification.CAInterop.java"
+      ],
+      "all_failures_after": [
+        "jdk.security.infra.java.security.cert.CertPathValidator.certification.CAInterop.java"
+      ],
+      "all_failures_before": [
+        "jdk.security.infra.java.security.cert.CertPathValidator.certification.CAInterop.java"
+      ]
+    }
+  },
+  {
+    "index": 396,
+    "commit": "e58859e8acc19bfd8aaa80e98534651e83850a97",
+    "parent": "fe3bef3e802768a1163acb5f7aacd31ef5d99f85",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java",
+        "test/jdk/sun/security/lib/cacerts/VerifyCACerts.java",
+        "test/jdk/sun/security/ssl/X509TrustManagerImpl/distrust/Entrust.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java",
+        "test/jdk/sun/security/lib/cacerts/VerifyCACerts.java",
+        "test/jdk/sun/security/ssl/X509TrustManagerImpl/distrust/Entrust.java"
+      ],
+      "all": "test/jdk/security/infra/java/security/cert/CertPathValidator/certification/CAInterop.java test/jdk/sun/security/lib/cacerts/VerifyCACerts.java test/jdk/sun/security/ssl/X509TrustManagerImpl/distrust/Entrust.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 1,
+      "before_pass_count": 4,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.security.infra.java.security.cert.CertPathValidator.certification.CAInterop.java"
+      ],
+      "all_failures_after": [
+        "jdk.security.infra.java.security.cert.CertPathValidator.certification.CAInterop.java"
+      ],
+      "all_failures_before": [
+        "jdk.security.infra.java.security.cert.CertPathValidator.certification.CAInterop.java"
+      ]
+    }
+  },
+  {
+    "index": 433,
+    "commit": "331adac38e65b87f4ac381f42cf3c7873eb89191",
+    "parent": "e989c1d138cc599b28a57911e1f1879e1e6cad46",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/jdk/jfr/event/io/TestIOTopFrame.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/jdk/jfr/event/io/TestIOTopFrame.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [
+        "jdk.jdk.jfr.event.io.TestIOTopFrame.java"
+      ],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 434,
+    "commit": "e989c1d138cc599b28a57911e1f1879e1e6cad46",
+    "parent": "5129887dfead268672403265eb4f3795682ca699",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/io/File/EmptyPath.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/io/File/EmptyPath.java"
+      ],
+      "all": "test/jdk/java/io/File/EmptyPath.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.java.io.File.EmptyPath.java"
+      ],
+      "all_failures_after": [
+        "jdk.java.io.File.EmptyPath.java"
+      ],
+      "all_failures_before": [
+        "jdk.java.io.File.EmptyPath.java"
+      ]
+    }
+  },
+  {
+    "index": 436,
+    "commit": "69ea85ee1205422189e9fc225a69e93d6456c217",
+    "parent": "93260d639e5204a35de4f574dee773302bb1969f",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/io/File/EmptyPath.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/io/File/EmptyPath.java"
+      ],
+      "all": "test/jdk/java/io/File/EmptyPath.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "jdk.java.io.File.EmptyPath.java"
+      ],
+      "all_failures_after": [
+        "jdk.java.io.File.EmptyPath.java"
+      ],
+      "all_failures_before": [
+        "jdk.java.io.File.EmptyPath.java"
+      ]
+    }
+  },
+  {
+    "index": 439,
+    "commit": "a626c1d92c4f73a06705efb68584bd10b61ce544",
+    "parent": "533211af73d2df79fb041055a7a5de1b92bf5e3d",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/jdk/jfr/event/profiling/TestCPUTimeAndExecutionSample.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/jdk/jfr/event/profiling/TestCPUTimeAndExecutionSample.java"
+      ],
+      "all": "test/jdk/jdk/jfr/event/profiling/TestCPUTimeAndExecutionSample.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 446,
+    "commit": "cc2cf97834445f1a5c1fa6ba4e06fb2cf24f22cb",
+    "parent": "83d69cab8b56dfdd5dbca0a3613114a245a3562f",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/lib/jdk/test/lib/security/CertificateBuilder.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/lib/jdk/test/lib/security/CertificateBuilder.java"
+      ],
+      "all": "test/lib/jdk/test/lib/security/CertificateBuilder.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "lib.jdk.lib.security.CertificateBuilder.java"
+      ],
+      "all_failures_after": [
+        "lib.jdk.lib.security.CertificateBuilder.java"
+      ],
+      "all_failures_before": [
+        "lib.jdk.lib.security.CertificateBuilder.java"
+      ]
+    }
+  },
+  {
+    "index": 450,
+    "commit": "db6230991b3e7ea5ee068c22c1f4c538e2c10074",
+    "parent": "98bc22a969a343fcf87c0bc2a033feaa2d99d1f6",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/util/Calendar/JapaneseCalendarNameTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/util/Calendar/JapaneseCalendarNameTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.java.util.Calendar.JapaneseCalendarNameTest.java",
+        "java.util.Calendar.JapaneseCalendarNameTest"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 454,
+    "commit": "c374ac6df4b1ba830668e46c208d01fdf063bc23",
+    "parent": "44f5dfef976bbe81c4b76b8b432f29ca2ea223d4",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/jdk/classfile/BuilderParamTest.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/jdk/classfile/BuilderParamTest.java"
+      ],
+      "all": "test/jdk/jdk/classfile/BuilderParamTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 461,
+    "commit": "96380509b31a2dcc41bbba62ec316e1c569b13ab",
+    "parent": "9b99ed8b399fd587ba5cb73a44f73895a97277bf",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/hotspot/jtreg/serviceability/sa/ClhsdbJstackWithConcurrentLock.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/hotspot/jtreg/serviceability/sa/ClhsdbJstackWithConcurrentLock.java"
+      ],
+      "all": "test/hotspot/jtreg/serviceability/sa/ClhsdbJstackWithConcurrentLock.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [
+        "hotspot.jtreg.serviceability.sa.ClhsdbJstackWithConcurrentLock.java"
+      ],
+      "all_failures_after": [
+        "hotspot.jtreg.serviceability.sa.ClhsdbJstackWithConcurrentLock.java"
+      ],
+      "all_failures_before": [
+        "hotspot.jtreg.serviceability.sa.ClhsdbJstackWithConcurrentLock.java"
+      ]
+    }
+  },
+  {
+    "index": 465,
+    "commit": "50751da5625795e54e5235d18e4277add0ce233e",
+    "parent": "21cb2acda0d70cc838dfa097d235e86338609e7e",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/langtools/tools/javac/platform/RequiresIdentityTest.java"
+      ],
+      "added": [
+        "test/langtools/tools/javac/flags/ExtendedStandardFlagsOverlayFlagsConflict.java",
+        "test/langtools/tools/javac/flags/NoFalseSealedError.java"
+      ],
+      "modified_files": [
+        "test/langtools/tools/javac/platform/RequiresIdentityTest.java"
+      ],
+      "all": "test/langtools/tools/javac/platform/RequiresIdentityTest.java test/langtools/tools/javac/flags/ExtendedStandardFlagsOverlayFlagsConflict.java test/langtools/tools/javac/flags/NoFalseSealedError.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 6,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 4
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "langtools.tools.javac.flags.ExtendedStandardFlagsOverlayFlagsConflict.java",
+        "toolsc.flags.NoFalseSealedError",
+        "langtools.tools.javac.flags.NoFalseSealedError.java",
+        "toolsc.flags.ExtendedStandardFlagsOverlayFlagsConflict"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 466,
+    "commit": "21cb2acda0d70cc838dfa097d235e86338609e7e",
+    "parent": "0e4422b284ab25064d67afc1473e2711f585886b",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/langtools/tools/javac/recovery/AnnotationRecovery.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/langtools/tools/javac/recovery/AnnotationRecovery.java"
+      ],
+      "all": "test/langtools/tools/javac/recovery/AnnotationRecovery.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 467,
+    "commit": "0e4422b284ab25064d67afc1473e2711f585886b",
+    "parent": "1e985168d674d7087727f0dea11c2d50446f3977",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/langtools/tools/javac/generics/diamond/AnonymousLabeledAsAbstractTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/langtools/tools/javac/generics/diamond/AnonymousLabeledAsAbstractTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "toolsc.generics.diamond.AnonymousLabeledAsAbstractTest",
+        "langtools.tools.javac.generics.diamond.AnonymousLabeledAsAbstractTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 478,
+    "commit": "8707167ef3bb7015d87599387fbbcf17ddf0f291",
+    "parent": "e3bd9c6e1c78aac4de5907a3cb3358ec5862373b",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/jdk/jfr/api/metadata/annotations/TestThrottle.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/jdk/jfr/api/metadata/annotations/TestThrottle.java"
+      ],
+      "all": "test/jdk/jdk/jfr/api/metadata/annotations/TestThrottle.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 479,
+    "commit": "e3bd9c6e1c78aac4de5907a3cb3358ec5862373b",
+    "parent": "993215f3dd7aba221da8c901117a8ff3f0ccb675",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/jdk/jfr/event/tracing/TestLazyPlatformTracer.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/jdk/jfr/event/tracing/TestLazyPlatformTracer.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.jdk.jfr.event.tracing.TestLazyPlatformTracer.java",
+        "jdk.jfr.event.tracing.TestLazyPlatformTracer"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 480,
+    "commit": "8a98738f448ac91f517bcc5a67d01522b7ba2025",
+    "parent": "ab013962093a427ae0f2acac82748d0c9f86ab3f",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/nio/file/FileStore/Basic.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/nio/file/FileStore/Basic.java"
+      ],
+      "all": "test/jdk/java/nio/file/FileStore/Basic.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 482,
+    "commit": "92268e17beec15f3fefa6784a48d6f0e1bb9c67a",
+    "parent": "a98a5e54fcb7916ce922a6997c452d2264bc4479",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/com/sun/management/HotSpotDiagnosticMXBean/DumpThreadsWithEliminatedLock.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/com/sun/management/HotSpotDiagnosticMXBean/DumpThreadsWithEliminatedLock.java"
+      ],
+      "all": "test/jdk/com/sun/management/HotSpotDiagnosticMXBean/DumpThreadsWithEliminatedLock.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 484,
+    "commit": "a98a5e54fcb7916ce922a6997c452d2264bc4479",
+    "parent": "b245c517e39086d8e90313d6d35be6f9062a67ce",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/nio/file/FileStore/Basic.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/nio/file/FileStore/Basic.java"
+      ],
+      "all": "test/jdk/java/nio/file/FileStore/Basic.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 501,
+    "commit": "a5769520393555fbf18992b62fb8d1526e809ce8",
+    "parent": "b89f3648421601bc7520895afb4f9d5ff87030d8",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/langtools/jdk/javadoc/doclet/testNewApiList/TestNewApiList.java",
+        "test/langtools/jdk/javadoc/doclet/testPreview/TestPreview.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/langtools/jdk/javadoc/doclet/testNewApiList/TestNewApiList.java",
+        "test/langtools/jdk/javadoc/doclet/testPreview/TestPreview.java"
+      ],
+      "all": "test/langtools/jdk/javadoc/doclet/testNewApiList/TestNewApiList.java test/langtools/jdk/javadoc/doclet/testPreview/TestPreview.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 4,
+      "after_fail_count": 0,
+      "before_pass_count": 4,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 502,
+    "commit": "b89f3648421601bc7520895afb4f9d5ff87030d8",
+    "parent": "0694cc1d527db17f2e5cdd4f9d2489ba04adfef5",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "test/jdk/java/security/PEM/PEMDecoderTest.java"
+      ],
+      "added": [],
+      "modified_files": [
+        "test/jdk/java/security/PEM/PEMDecoderTest.java"
+      ],
+      "all": "test/jdk/java/security/PEM/PEMDecoderTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 2,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 507,
+    "commit": "fe9efb75b0521ea3eeadcbf4a80fa8797226344f",
+    "parent": "ca6b165003ab0b3e1cc8344b916f8ff940f3e533",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/awt/Headless/HeadlessExceptionTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/awt/Headless/HeadlessExceptionTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.awt.Headless.HeadlessExceptionTest",
+        "jdk.java.awt.Headless.HeadlessExceptionTest.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 510,
+    "commit": "79a85df074f25fbb767ad1b72db5082c51a88e9d",
+    "parent": "41928aed7dce0cc15be95f1552e6d62c18e9eea1",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/awt/Clipboard/ConcurrentClipboardAccessTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/awt/Clipboard/ConcurrentClipboardAccessTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 1,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [
+        "jdk.java.awt.Clipboard.ConcurrentClipboardAccessTest.java"
+      ],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 511,
+    "commit": "41928aed7dce0cc15be95f1552e6d62c18e9eea1",
+    "parent": "3f6b0c69c3f49d28e76f0f9f0286988f1830c49a",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/net/HttpURLConnection/HostHeaderTest.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/net/HttpURLConnection/HostHeaderTest.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.java.net.HttpURLConnection.HostHeaderTest.java",
+        "java.net.HttpURLConnection.HostHeaderTest"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 514,
+    "commit": "c832f001e47c0eb64948e90291991e678f6b2619",
+    "parent": "e5ac75a35b20d952c2054525184c0d203592c156",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/jdk/jfr/event/tracing/TestTracedString.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/jdk/jfr/event/tracing/TestTracedString.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "jdk.jfr.event.tracing.TestTracedString",
+        "jdk.jdk.jfr.event.tracing.TestTracedString.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 526,
+    "commit": "077ce2edc77b78e0a5a968bf935ed21468751dc9",
+    "parent": "2a3294571a809a783b474cde5d344447e2981109",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "test/jdk/java/nio/channels/SocketChannel/PeerReadsAfterAsyncClose.java"
+      ],
+      "modified_files": [],
+      "all": "test/jdk/java/nio/channels/SocketChannel/PeerReadsAfterAsyncClose.java"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Skipped",
+    "test_status_before": "Skipped (Only New Tests)",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 2,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "java.nio.channels.SocketChannel.PeerReadsAfterAsyncClose",
+        "jdk.java.nio.channels.SocketChannel.PeerReadsAfterAsyncClose.java"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  }
+]

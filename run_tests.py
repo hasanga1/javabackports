@@ -74,6 +74,20 @@ PROJECT_CONFIG = {
         "boot_jdk": "/opt/java/openjdk",
         "jtreg_home": "/opt/jtreg"
     },
+    "jdk25u-dev": {
+        "repo_dir": "jdk25u-dev",
+        "report_pattern": "**/JTwork/**/*.xml",
+        "builder_tag": "jdk25-builder:latest",
+        "build_system": "make",
+        "boot_jdk": "/opt/java/jdk-24",
+        "jtreg_home": "/opt/jtreg"
+    },
+    "hibernate-orm": {
+        "repo_dir": "hibernate-orm",
+        "report_pattern": "**/build/**/*.xml",
+        "builder_tag": "hibernate-builder:latest",
+        "build_system": "gradle"
+    },
     "sql": {
         "repo_dir": "sql",
         "report_pattern": "**/build/test-results/**/*.xml",
@@ -108,6 +122,12 @@ PROJECT_CONFIG = {
         "repo_dir": "flink",
         "report_pattern": "**/target/surefire-reports/*.xml",
         "builder_tag": "flink-builder:latest",
+        "build_system": "maven"
+    },
+    "hive": {
+        "repo_dir": "hive",
+        "report_pattern": "**/target/surefire-reports/*.xml",
+        "builder_tag": "hive-builder:latest",
         "build_system": "maven"
     },
     "lucene": {

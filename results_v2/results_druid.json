@@ -765,5 +765,1326 @@
       "all_failures_after": [],
       "all_failures_before": []
     }
+  },
+  {
+    "index": 0,
+    "commit": "4df50860cd4cfedf5f5ecde544d2cb804c3902a4",
+    "parent": "0dba61cb82bef8ce963314fadeb0456abde5b721",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "processing:org.apache.druid.frame.channel.ComposingWritableFrameChannelTest",
+        "processing:org.apache.druid.frame.processor.OutputChannelFactoryTest",
+        "processing:org.apache.druid.frame.processor.OutputChannelTest",
+        "processing:org.apache.druid.frame.processor.OutputChannelsTest"
+      ],
+      "added": [],
+      "modified_files": [
+        "processing/src/test/java/org/apache/druid/frame/channel/ComposingWritableFrameChannelTest.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/OutputChannelFactoryTest.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/OutputChannelTest.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/OutputChannelsTest.java"
+      ],
+      "all": "processing:org.apache.druid.frame.channel.ComposingWritableFrameChannelTest processing:org.apache.druid.frame.processor.OutputChannelFactoryTest processing:org.apache.druid.frame.processor.OutputChannelTest processing:org.apache.druid.frame.processor.OutputChannelsTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 8,
+      "after_fail_count": 0,
+      "before_pass_count": 8,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 1,
+    "commit": "948551474bf1c9b66742745e0a0066993479d392",
+    "parent": "d8da0e1f0a5a8c01237832150d5203a0c9615770",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest",
+        "embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest"
+      ],
+      "added": [
+        "embedded-tests:org.apache.druid.testing.embedded.msq.BaseRealtimeQueryTest",
+        "embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeUnnestQueryTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.exec.DataServerQueryHandlerUtilsTest"
+      ],
+      "modified_files": [
+        "embedded-tests/src/test/java/org/apache/druid/testing/embedded/msq/EmbeddedDurableShuffleStorageTest.java",
+        "embedded-tests/src/test/java/org/apache/druid/testing/embedded/msq/EmbeddedMSQApis.java",
+        "embedded-tests/src/test/java/org/apache/druid/testing/embedded/msq/EmbeddedMSQRealtimeQueryTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/indexing/IndexerDataServerQueryHandlerTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/CalciteMSQTestsHelper.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestBase.java",
+        "services/src/test/java/org/apache/druid/testing/embedded/EmbeddedClusterApis.java"
+      ],
+      "all": "embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest extensions-core/multi-stage-query:org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest embedded-tests:org.apache.druid.testing.embedded.msq.BaseRealtimeQueryTest embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeUnnestQueryTest extensions-core/multi-stage-query:org.apache.druid.msq.exec.DataServerQueryHandlerUtilsTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 8,
+      "after_fail_count": 3,
+      "before_pass_count": 6,
+      "before_fail_count": 2,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.msq.exec.DataServerQueryHandlerUtilsTest.testTransformRestrictedDatasource",
+        "org.apache.druid.msq.exec.DataServerQueryHandlerUtilsTest.testTransformDatasource"
+      ],
+      "persistent_failures": [
+        "org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest.",
+        "org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest."
+      ],
+      "all_failures_after": [
+        "org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest.",
+        "org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeUnnestQueryTest.",
+        "org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest."
+      ],
+      "all_failures_before": [
+        "org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest.",
+        "org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest."
+      ]
+    }
+  },
+  {
+    "index": 3,
+    "commit": "e0739e46093a08227efe460ee994cf5090815184",
+    "parent": "a3729304e5a1373d8742d720930e7caaad2f22e4",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.DartWorkerManagerTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.exec.MSQTasksTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.indexing.MSQWorkerTaskLauncherTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.util.MSQFaultUtilsTest"
+      ],
+      "added": [],
+      "modified_files": [
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/dart/controller/DartWorkerManagerTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/exec/MSQTasksTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/indexing/MSQWorkerTaskLauncherTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestControllerContext.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/util/MSQFaultUtilsTest.java"
+      ],
+      "all": "extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.DartWorkerManagerTest extensions-core/multi-stage-query:org.apache.druid.msq.exec.MSQTasksTest extensions-core/multi-stage-query:org.apache.druid.msq.indexing.MSQWorkerTaskLauncherTest extensions-core/multi-stage-query:org.apache.druid.msq.util.MSQFaultUtilsTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 25,
+      "after_fail_count": 0,
+      "before_pass_count": 24,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 1
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.msq.indexing.MSQWorkerTaskLauncherTest.testMultipleWorkerFailureRegistration"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 4,
+    "commit": "cd89f7062f0c7a8d2a425edbae75acab4306ac32",
+    "parent": "17771bf99521196fd481b8533db0a74303c98357",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.exec.DataServerQueryHandlerTest",
+        "processing:org.apache.druid.frame.processor.FrameProcessorExecutorTest",
+        "processing:org.apache.druid.frame.processor.ReturnOrAwaitTest",
+        "server:org.apache.druid.discovery.DataServerClientTest"
+      ],
+      "added": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest"
+      ],
+      "modified_files": [
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/exec/MSQLoadedSegmentTests.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/FrameProcessorExecutorTest.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/ReturnOrAwaitTest.java",
+        "server/src/test/java/org/apache/druid/discovery/DataServerClientTest.java",
+        "services/src/test/java/org/apache/druid/testing/embedded/EmbeddedDruidCluster.java"
+      ],
+      "all": "extensions-core/multi-stage-query:org.apache.druid.msq.exec.DataServerQueryHandlerTest processing:org.apache.druid.frame.processor.FrameProcessorExecutorTest processing:org.apache.druid.frame.processor.ReturnOrAwaitTest server:org.apache.druid.discovery.DataServerClientTest extensions-core/multi-stage-query:org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 10,
+      "after_fail_count": 0,
+      "before_pass_count": 11,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 6
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest.testFetchRowsFromServer",
+        "org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest.testServerNotFoundWithoutHandoffShouldThrowException",
+        "org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest.testOneSegmentRelocated",
+        "org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest.testQueryFail",
+        "org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest.testServerNotFoundButHandoffShouldReturnWithStatus",
+        "org.apache.druid.msq.indexing.IndexerDataServerQueryHandlerTest.testHandoff"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 5,
+    "commit": "b3f6a23eb6015009e2bb763a739f24cabd9807f0",
+    "parent": "cc930150da363c47d220ce3e7301d3851c64fc9c",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest",
+        "processing:org.apache.druid.frame.channel.ComposingWritableFrameChannelTest",
+        "processing:org.apache.druid.frame.processor.OutputChannelFactoryTest",
+        "sql:org.apache.druid.sql.calcite.planner.CalcitesTest"
+      ],
+      "added": [
+        "embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest"
+      ],
+      "modified_files": [
+        "embedded-tests/src/test/java/org/apache/druid/testing/embedded/msq/EmbeddedMSQRealtimeQueryTest.java",
+        "processing/src/test/java/org/apache/druid/frame/channel/ComposingWritableFrameChannelTest.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/OutputChannelFactoryTest.java",
+        "services/src/test/java/org/apache/druid/testing/embedded/EmbeddedDruidServer.java",
+        "services/src/test/java/org/apache/druid/testing/embedded/ServerReferenceHolder.java",
+        "services/src/test/java/org/apache/druid/testing/embedded/ServerReferencesProvider.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/planner/CalcitesTest.java"
+      ],
+      "all": "embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest processing:org.apache.druid.frame.channel.ComposingWritableFrameChannelTest processing:org.apache.druid.frame.processor.OutputChannelFactoryTest sql:org.apache.druid.sql.calcite.planner.CalcitesTest embedded-tests:org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 6,
+      "after_fail_count": 2,
+      "before_pass_count": 5,
+      "before_fail_count": 1,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 1
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.sql.calcite.planner.CalcitesTest.testEscapeStringLiteralAllAscii"
+      ],
+      "persistent_failures": [
+        "org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest."
+      ],
+      "all_failures_after": [
+        "org.apache.druid.testing.embedded.msq.EmbeddedDurableShuffleStorageTest.",
+        "org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest."
+      ],
+      "all_failures_before": [
+        "org.apache.druid.testing.embedded.msq.EmbeddedMSQRealtimeQueryTest."
+      ]
+    }
+  },
+  {
+    "index": 8,
+    "commit": "ccb7c2edd959a26d7f96528a2779b80051815ac1",
+    "parent": "f43964a8082d0b844b4ba55813df3d38e85613c9",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.http.DartSqlResourceTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.http.GetQueriesResponseTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.sql.DartSqlClientImplTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.CollectedReadablePartitionsTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.CombinedReadablePartitionsTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.StripedReadablePartitionsTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.kernel.controller.WorkerInputsTest"
+      ],
+      "added": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest"
+      ],
+      "modified_files": [
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/dart/controller/http/DartSqlResourceTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/dart/controller/http/GetQueriesResponseTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/dart/controller/sql/DartSqlClientImplTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/input/stage/CollectedReadablePartitionsTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/input/stage/CombinedReadablePartitionsTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/input/stage/StripedReadablePartitionsTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/kernel/controller/WorkerInputsTest.java"
+      ],
+      "all": "extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.http.DartSqlResourceTest extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.http.GetQueriesResponseTest extensions-core/multi-stage-query:org.apache.druid.msq.dart.controller.sql.DartSqlClientImplTest extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.CollectedReadablePartitionsTest extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.CombinedReadablePartitionsTest extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.StripedReadablePartitionsTest extensions-core/multi-stage-query:org.apache.druid.msq.kernel.controller.WorkerInputsTest extensions-core/multi-stage-query:org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 58,
+      "after_fail_count": 0,
+      "before_pass_count": 50,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 8
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest.testSerde",
+        "org.apache.druid.msq.kernel.controller.WorkerInputsTest.test_max_threeInputs_fourWorkers_withGaps",
+        "org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest.testWorkers",
+        "org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest.testStageNumber",
+        "org.apache.druid.msq.input.stage.StripedReadablePartitionsTest.testFromDenseSet",
+        "org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest.testPartitionNumbers",
+        "org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest.testEquals",
+        "org.apache.druid.msq.input.stage.SparseStripedReadablePartitionsTest.testSplit"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 10,
+    "commit": "b275ffed8d6138b4312b7fe2dc42980db5218f6a",
+    "parent": "7d515f85abb1a330d2182d7b18fa56046defb2b9",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.exec.QueryValidatorTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.indexing.MSQControllerTaskTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.input.table.TableInputSpecSlicerTest",
+        "processing:org.apache.druid.frame.processor.FrameProcessorExecutorTest",
+        "processing:org.apache.druid.frame.processor.RunAllFullyWidgetTest"
+      ],
+      "added": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.exec.WorkerImplTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.kernel.controller.ControllerQueryKernelConfigTest"
+      ],
+      "modified_files": [
+        "benchmarks/src/test/java/org/apache/druid/benchmark/frame/FrameChannelMergerBenchmark.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/exec/QueryValidatorTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/indexing/MSQControllerTaskTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/querykit/FrameProcessorTestBase.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestControllerContext.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestOverlordServiceClient.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestWorkerContext.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/FrameProcessorExecutorTest.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/RunAllFullyWidgetTest.java"
+      ],
+      "all": "extensions-core/multi-stage-query:org.apache.druid.msq.exec.QueryValidatorTest extensions-core/multi-stage-query:org.apache.druid.msq.indexing.MSQControllerTaskTest extensions-core/multi-stage-query:org.apache.druid.msq.input.table.TableInputSpecSlicerTest processing:org.apache.druid.frame.processor.FrameProcessorExecutorTest processing:org.apache.druid.frame.processor.RunAllFullyWidgetTest extensions-core/multi-stage-query:org.apache.druid.msq.exec.WorkerImplTest extensions-core/multi-stage-query:org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest extensions-core/multi-stage-query:org.apache.druid.msq.kernel.controller.ControllerQueryKernelConfigTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 753,
+      "after_fail_count": 0,
+      "before_pass_count": 748,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 20
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.msq.kernel.controller.ControllerQueryKernelConfigTest.testBuilder",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceDynamic_needTwoDueToFiles",
+        "org.apache.druid.msq.exec.WorkerImplTest.test_makeWorkOrderToUse_missingOutputChannelModeAndWorkerContext",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceDynamic_none",
+        "org.apache.druid.msq.exec.WorkerImplTest.test_makeWorkOrderToUse_nothingMissing",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_intervalFilterMatchesNothing",
+        "org.apache.druid.msq.kernel.controller.ControllerQueryKernelConfigTest.testEquals",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_threeSlices",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_intervalAndDimFilter",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_needTwoSlices",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceDynamic_needTwoDueToBytes",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceDynamic_needOne",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_dimFilter",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_canSliceDynamic",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_noDataSource",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_intervalFilter",
+        "org.apache.druid.msq.indexing.MSQControllerTaskTest.testGetTaskLockType",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_oneSlice",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceStatic_dimFilterNotUsed",
+        "org.apache.druid.msq.input.table.IndexerTableInputSpecSlicerTest.test_sliceDynamic_maxOneSlice"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 11,
+    "commit": "491087fbe305ee9e057ca6b8eef09e7f33bd986c",
+    "parent": "cf44747c4d8484da882cd97da0244c9d3301f98e",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.exec.TaskDataSegmentProviderTest"
+      ],
+      "added": [
+        "processing:org.apache.druid.segment.CompleteSegmentTest"
+      ],
+      "modified_files": [
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/exec/TaskDataSegmentProviderTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/CalciteMSQTestsHelper.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestBase.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestDelegateDataSegmentPusher.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestSegmentManager.java"
+      ],
+      "all": "extensions-core/multi-stage-query:org.apache.druid.msq.exec.TaskDataSegmentProviderTest processing:org.apache.druid.segment.CompleteSegmentTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 3,
+      "after_fail_count": 0,
+      "before_pass_count": 1,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 2
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.segment.CompleteSegmentTest.testCloseSegment",
+        "org.apache.druid.segment.CompleteSegmentTest.testEquals"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 15,
+    "commit": "ef7c461722fa89875c7657ed4c835470a20caf06",
+    "parent": "2062948721217893e20568bc2d6cde656e57108d",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-contrib/kubernetes-overlord-extensions:org.apache.druid.k8s.overlord.taskadapter.PodTemplateTaskAdapterTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.indexing.MSQControllerTaskTest",
+        "indexing-service:org.apache.druid.indexing.common.task.KillUnusedSegmentsTaskTest",
+        "server:org.apache.druid.server.coordination.SegmentBootstrapperCacheTest",
+        "server:org.apache.druid.server.coordination.SegmentBootstrapperTest"
+      ],
+      "added": [
+        "server:org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest"
+      ],
+      "modified_files": [
+        "extensions-contrib/kubernetes-overlord-extensions/src/test/java/org/apache/druid/k8s/overlord/taskadapter/PodTemplateTaskAdapterTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/indexing/MSQControllerTaskTest.java",
+        "indexing-service/src/test/java/org/apache/druid/indexing/common/task/KillUnusedSegmentsTaskTest.java",
+        "server/src/test/java/org/apache/druid/server/coordination/SegmentBootstrapperCacheTest.java",
+        "server/src/test/java/org/apache/druid/server/coordination/SegmentBootstrapperTest.java"
+      ],
+      "all": "extensions-contrib/kubernetes-overlord-extensions:org.apache.druid.k8s.overlord.taskadapter.PodTemplateTaskAdapterTest extensions-core/multi-stage-query:org.apache.druid.msq.indexing.MSQControllerTaskTest indexing-service:org.apache.druid.indexing.common.task.KillUnusedSegmentsTaskTest server:org.apache.druid.server.coordination.SegmentBootstrapperCacheTest server:org.apache.druid.server.coordination.SegmentBootstrapperTest server:org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 77,
+      "after_fail_count": 0,
+      "before_pass_count": 65,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 13
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.server.coordination.SegmentBootstrapperTest.testLoadOnlyRequiredBootstrapSegments",
+        "org.apache.druid.k8s.overlord.taskadapter.PodTemplateTaskAdapterTest.test_fromTask_withBroadcastDatasourceLoadingModeAll",
+        "org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest.testLoadingOnlyRequiredLookupsWithNullList",
+        "org.apache.druid.server.coordination.SegmentBootstrapperTest.testLoadNoBootstrapSegments",
+        "org.apache.druid.k8s.overlord.taskadapter.PodTemplateTaskAdapterTest.test_fromTask_withIndexKafkaPodTemplateInRuntimeProperties",
+        "org.apache.druid.msq.indexing.MSQControllerTaskTest.testGetDefaultBroadcastDatasourceLoadingSpec",
+        "org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest.testCreateBroadcastLoadingSpecFromNullContext",
+        "org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest.",
+        "org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest.testLoadingOnlyRequiredLookups",
+        "org.apache.druid.indexing.common.task.KillUnusedSegmentsTaskTest.testGetBroadcastDatasourcesToLoad",
+        "org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest.testLoadingAllBroadcastDatasources",
+        "org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest.testCreateBroadcastLoadingSpecFromContext",
+        "org.apache.druid.server.coordination.BroadcastDatasourceLoadingSpecTest.testLoadingNoLookups"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 17,
+    "commit": "d06327ab249d4136332fe8ca0e4fa7b47e39d7f3",
+    "parent": "cf00b4cd24f00e36355973ab2e93aa5291e3dbdf",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "indexing-service:org.apache.druid.indexing.compact.CompactionSupervisorSpecTest",
+        "indexing-service:org.apache.druid.indexing.compact.OverlordCompactionSchedulerTest",
+        "indexing-service:org.apache.druid.indexing.overlord.http.OverlordCompactionResourceTest",
+        "integration-tests:org.apache.druid.tests.coordinator.duty.ITAutoCompactionTest",
+        "server:org.apache.druid.server.compaction.CompactionRunSimulatorTest",
+        "server:org.apache.druid.server.coordinator.AutoCompactionSnapshotTest",
+        "server:org.apache.druid.server.coordinator.DataSourceCompactionConfigAuditEntryTest",
+        "server:org.apache.druid.server.coordinator.DataSourceCompactionConfigHistoryTest",
+        "server:org.apache.druid.server.coordinator.DruidCompactionConfigTest",
+        "server:org.apache.druid.server.coordinator.DruidCoordinatorTest",
+        "server:org.apache.druid.server.coordinator.duty.CompactSegmentsTest",
+        "server:org.apache.druid.server.http.CoordinatorCompactionConfigsResourceTest",
+        "server:org.apache.druid.server.http.CoordinatorCompactionResourceTest"
+      ],
+      "added": [
+        "server:org.apache.druid.server.coordinator.CompactionSupervisorConfigTest"
+      ],
+      "modified_files": [
+        "indexing-service/src/main/java/org/apache/druid/indexing/compact/CompactionSupervisorSpec.java",
+        "indexing-service/src/test/java/org/apache/druid/indexing/compact/CompactionSupervisorSpecTest.java",
+        "indexing-service/src/test/java/org/apache/druid/indexing/compact/OverlordCompactionSchedulerTest.java",
+        "indexing-service/src/test/java/org/apache/druid/indexing/overlord/http/OverlordCompactionResourceTest.java",
+        "integration-tests/src/test/java/org/apache/druid/tests/coordinator/duty/ITAutoCompactionTest.java",
+        "server/src/test/java/org/apache/druid/server/compaction/CompactionRunSimulatorTest.java",
+        "server/src/test/java/org/apache/druid/server/coordinator/AutoCompactionSnapshotTest.java",
+        "server/src/test/java/org/apache/druid/server/coordinator/DataSourceCompactionConfigAuditEntryTest.java",
+        "server/src/test/java/org/apache/druid/server/coordinator/DataSourceCompactionConfigHistoryTest.java",
+        "server/src/test/java/org/apache/druid/server/coordinator/DruidCompactionConfigTest.java",
+        "server/src/test/java/org/apache/druid/server/coordinator/DruidCoordinatorTest.java",
+        "server/src/test/java/org/apache/druid/server/coordinator/duty/CompactSegmentsTest.java",
+        "server/src/test/java/org/apache/druid/server/http/CoordinatorCompactionConfigsResourceTest.java",
+        "server/src/test/java/org/apache/druid/server/http/CoordinatorCompactionResourceTest.java"
+      ],
+      "all": "indexing-service:org.apache.druid.indexing.compact.CompactionSupervisorSpecTest indexing-service:org.apache.druid.indexing.compact.OverlordCompactionSchedulerTest indexing-service:org.apache.druid.indexing.overlord.http.OverlordCompactionResourceTest integration-tests:org.apache.druid.tests.coordinator.duty.ITAutoCompactionTest server:org.apache.druid.server.compaction.CompactionRunSimulatorTest server:org.apache.druid.server.coordinator.AutoCompactionSnapshotTest server:org.apache.druid.server.coordinator.DataSourceCompactionConfigAuditEntryTest server:org.apache.druid.server.coordinator.DataSourceCompactionConfigHistoryTest server:org.apache.druid.server.coordinator.DruidCompactionConfigTest server:org.apache.druid.server.coordinator.DruidCoordinatorTest server:org.apache.druid.server.coordinator.duty.CompactSegmentsTest server:org.apache.druid.server.http.CoordinatorCompactionConfigsResourceTest server:org.apache.druid.server.http.CoordinatorCompactionResourceTest server:org.apache.druid.server.coordinator.CompactionSupervisorConfigTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Fail",
+    "build_status_before": "Success",
+    "test_status_before": "Fail",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 211,
+      "after_fail_count": 0,
+      "before_pass_count": 207,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 6
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.server.http.CoordinatorCompactionConfigsResourceTest.testAddDatasourceConfigWithMSQEngineIsInvalid",
+        "org.apache.druid.server.coordinator.DruidCoordinatorTest.testSimulateRunWithEmptyDatasourceCompactionConfigs",
+        "org.apache.druid.indexing.compact.CompactionSupervisorSpecTest.testGetValidationResultForInvalidSpec",
+        "org.apache.druid.server.coordinator.CompactionSupervisorConfigTest.testCompactionSupervisorConfigEquality",
+        "org.apache.druid.indexing.compact.CompactionSupervisorSpecTest.testGetStatusWithInvalidSpec",
+        "org.apache.druid.server.coordinator.CompactionSupervisorConfigTest.testCompactionSupervisorConfigSerde"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 19,
+    "commit": "2f13cd2500d1f35e131443634d6ef26281d1e714",
+    "parent": "60ed36c89bc0e5598af56542a74ac503230959d3",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "server:org.apache.druid.server.ClientQuerySegmentWalkerTest",
+        "sql:org.apache.druid.sql.calcite.BaseCalciteQueryTest",
+        "sql:org.apache.druid.sql.calcite.CalciteWindowQueryTest"
+      ],
+      "added": [
+        "processing:org.apache.druid.query.operator.WindowOperatorQueryQueryToolChestTest"
+      ],
+      "modified_files": [
+        "server/src/test/java/org/apache/druid/server/ClientQuerySegmentWalkerTest.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/BaseCalciteQueryTest.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/CalciteWindowQueryTest.java"
+      ],
+      "all": "server:org.apache.druid.server.ClientQuerySegmentWalkerTest sql:org.apache.druid.sql.calcite.BaseCalciteQueryTest sql:org.apache.druid.sql.calcite.CalciteWindowQueryTest processing:org.apache.druid.query.operator.WindowOperatorQueryQueryToolChestTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 93,
+      "after_fail_count": 0,
+      "before_pass_count": 64,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 29
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[15]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[26]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[14]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[21]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[22]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[20]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[13]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[8]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[3]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[4]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[16]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[24]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[17]",
+        "org.apache.druid.query.operator.WindowOperatorQueryQueryToolChestTest.mergeResultsWithRowResultSerializationMode",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[25]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[10]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[19]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[1]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[27]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[9]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[2]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[6]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[7]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[23]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[11]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[12]",
+        "org.apache.druid.query.operator.WindowOperatorQueryQueryToolChestTest.mergeResultsWithFrameResultSerializationMode",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[5]",
+        "org.apache.druid.sql.calcite.CalciteWindowQueryTest.windowQueryTestsWithSubqueryBytes(String)[18]"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 22,
+    "commit": "463fb3e647095131ca0f0368b3a13609581c6a14",
+    "parent": "f3d207c321f558337913ad6b1abb41b87905190b",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.statistics.ClusterByStatisticsCollectorImplTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.statistics.DelegateOrMinKeyCollectorTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.statistics.DistinctKeyCollectorTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.statistics.QuantilesSketchKeyCollectorTest",
+        "processing:org.apache.druid.frame.key.ByteRowKeyComparatorTest",
+        "processing:org.apache.druid.frame.key.ClusterByTest",
+        "processing:org.apache.druid.frame.key.FrameComparisonWidgetImplTest",
+        "processing:org.apache.druid.frame.key.RowKeyComparatorTest",
+        "processing:org.apache.druid.frame.processor.SuperSorterTest",
+        "processing:org.apache.druid.frame.write.FrameWriterTest",
+        "processing:org.apache.druid.frame.write.FrameWritersTest",
+        "sql:org.apache.druid.sql.calcite.BaseCalciteQueryTest",
+        "sql:org.apache.druid.sql.calcite.CalciteNestedDataQueryTest"
+      ],
+      "added": [
+        "extensions-core/multi-stage-query:org.apache.druid.msq.exec.MSQComplexGroupByTest",
+        "extensions-core/multi-stage-query:org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest",
+        "processing:org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest"
+      ],
+      "modified_files": [
+        "benchmarks/src/test/java/org/apache/druid/benchmark/frame/FrameChannelMergerBenchmark.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/statistics/ClusterByStatisticsCollectorImplTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/statistics/DelegateOrMinKeyCollectorTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/statistics/DistinctKeyCollectorTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/statistics/QuantilesSketchKeyCollectorTest.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/CalciteMSQTestsHelper.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/ExtractResultsFactory.java",
+        "extensions-core/multi-stage-query/src/test/java/org/apache/druid/msq/test/MSQTestBase.java",
+        "processing/src/test/java/org/apache/druid/frame/key/ByteRowKeyComparatorTest.java",
+        "processing/src/test/java/org/apache/druid/frame/key/ClusterByTest.java",
+        "processing/src/test/java/org/apache/druid/frame/key/FrameComparisonWidgetImplTest.java",
+        "processing/src/test/java/org/apache/druid/frame/key/RowKeyComparatorTest.java",
+        "processing/src/test/java/org/apache/druid/frame/processor/SuperSorterTest.java",
+        "processing/src/test/java/org/apache/druid/frame/write/FrameWriterTest.java",
+        "processing/src/test/java/org/apache/druid/frame/write/FrameWriterTestData.java",
+        "processing/src/test/java/org/apache/druid/frame/write/FrameWritersTest.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/BaseCalciteQueryTest.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/CalciteNestedDataQueryTest.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/QueryTestRunner.java"
+      ],
+      "all": "extensions-core/multi-stage-query:org.apache.druid.msq.statistics.ClusterByStatisticsCollectorImplTest extensions-core/multi-stage-query:org.apache.druid.msq.statistics.DelegateOrMinKeyCollectorTest extensions-core/multi-stage-query:org.apache.druid.msq.statistics.DistinctKeyCollectorTest extensions-core/multi-stage-query:org.apache.druid.msq.statistics.QuantilesSketchKeyCollectorTest processing:org.apache.druid.frame.key.ByteRowKeyComparatorTest processing:org.apache.druid.frame.key.ClusterByTest processing:org.apache.druid.frame.key.FrameComparisonWidgetImplTest processing:org.apache.druid.frame.key.RowKeyComparatorTest processing:org.apache.druid.frame.processor.SuperSorterTest processing:org.apache.druid.frame.write.FrameWriterTest processing:org.apache.druid.frame.write.FrameWritersTest sql:org.apache.druid.sql.calcite.BaseCalciteQueryTest sql:org.apache.druid.sql.calcite.CalciteNestedDataQueryTest extensions-core/multi-stage-query:org.apache.druid.msq.exec.MSQComplexGroupByTest extensions-core/multi-stage-query:org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest processing:org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 628,
+      "after_fail_count": 0,
+      "before_pass_count": 436,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 209
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathInFilter",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByOnNestedColumnWithLimit2",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonKeysNonJsonInput",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayDoubleNulls",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongElementDefault",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = null, outputFrameType = ROW_BASED, sorted = ASCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testCoalesceOnNestedColumns",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonPathNegativeIndex",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayDouble",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariant2Double",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testCompositionTyping",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonQueryAndJsonObject",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_DAADAADD",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByOnNestedColumn",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithRollupOnNestedData(String, Map)[1]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByNegativeJsonPathIndex",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = COLUMNAR, outputFrameType = ROW_BASED, sorted = DESCENDING]",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = null, outputFrameType = COLUMNAR, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testUnnestRootSingleTypeArrayDoubleNulls",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithoutRollupOnNestedData(String, Map)[2]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testCoalesceOnNestedColumnsLater",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeStringMixed1SparseNotNull",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testSumPathMixedFilteredAggLong",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByJsonValues",
+        "org.apache.druid.frame.key.FrameComparisonWidgetImplTest.test_noComplexColumns_isPartiallyNullKey_someColumns",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByInvalidPath",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsAsMvdFiltered",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = COLUMNAR, outputFrameType = ROW_BASED, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariantNull",
+        "org.apache.druid.frame.key.FrameComparisonWidgetImplTest.test_noComplexColumns_isPartiallyNullKey_allColumns",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = COLUMNAR, outputFrameType = COLUMNAR, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongElement",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = null, outputFrameType = ROW_BASED, sorted = DESCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonValueArrays",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByNestedArrayPath",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayStringNullsAsMvdUnnest",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testUnnestJsonQueryArrays",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_AAAA_without_complex_column",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_DADADADA",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByCastedRootKeysJsonPath",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_AAAAAAAA",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsUnnest",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_ADDA_without_complex_column",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testCastAndSumPathStrings",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterString",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithByteComparableTypes",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testSortingOnNestedData(String, Map)[2]",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_AAAA_without_complex_column",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithRollupOnNestedData(String, Map)[3]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testReturningAndSumPathDecimal",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsAsMvd",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterLongNumeric",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByOnNestedColumnWithOrderBy",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = ROW_BASED, outputFrameType = COLUMNAR, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testToJsonAndParseJson",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonQuery",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = COLUMNAR, outputFrameType = ROW_BASED, sorted = DESCENDING]",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_DADA_without_complex_column",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testSortingOnNestedData(String, Map)[4]",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithInvalidOrder",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootKeys2",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_DAAD_without_complex_column",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithEmptyType",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithAllPermutationsOfThreeLengthKeyColumns",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeString",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterLongNoLowerNumeric",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayStringNullsUnnest",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongElementFiltered",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathLikeFilter",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterStringNoLower",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithRollupOnNestedData(String, Map)[4]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterLong",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testSumPath",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithoutRollupOnNestedData(String, Map)[3]",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = ROW_BASED, outputFrameType = ROW_BASED, sorted = NONE]",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithNonByteComparableTypes",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayDoubleElementFiltered",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsFilteredArrayEquality",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeLongMixed1",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testFilterJsonIsNotNull",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = COLUMNAR, outputFrameType = ROW_BASED, sorted = ASCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterLong",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootPath",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByAllPaths",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayDoubleElement",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_DDDDDDDD",
+        "org.apache.druid.frame.key.FrameComparisonWidgetImplTest.test_noComplexColumns_readKey_someColumns",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterDoubleNoUpperNumeric",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathLikeFilterStringPrefix",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByJsonValue",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeStringMixed2Sparse",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathDynamicArg",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testReturningAndSumPathDouble",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonValueUnDocumentedButSupportedOptions",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testScanStringNotNullCast",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithMultipleColumns",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByOnNestedColumnWithLimit",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonPathsNonJsonInput",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = null, outputFrameType = ROW_BASED, sorted = NONE]",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = null, outputFrameType = ROW_BASED, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJoinOnNestedColumnThrows",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testReturningAndSumPathStrings",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsAsMvdWithExpression",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testSortingOnNestedData(String, Map)[3]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testUnnestRootSingleTypeArrayStringNulls",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootKeysJsonPath",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathInFilterDouble",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = null, outputFrameType = ROW_BASED, sorted = ASCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPath",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathInFilterString",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsAsMvdFilteredMore",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterDouble",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeLong",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testSortingOnNestedData(String, Map)[1]",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = ROW_BASED, outputFrameType = COLUMNAR, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterDoubleNoLower",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeLongMixed2",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupJsonValueAny",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterLongNoUpper",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayStringNullsFilteredAsMvd",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_DADADADA",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayStringElement",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_DADA_without_complex_column",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_DDDDDDDD",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsFiltered",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testUnnestJsonQueryArraysJsonValueSum",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathLikeFilterVariant",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testSumPathFilteredAggString",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testSumPathMixed",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNullsFilteredMore",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testUnnestJsonQueryArraysJsonValue",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByAndFilterVariant",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testCastAndSumPath",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariantNotNull",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_DAAD_without_complex_column",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_DDDD_without_complex_column",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterLongNoLower",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterNonExistent",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariant3",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testReturningAndSumPath",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithRollupOnNestedData(String, Map)[2]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathNumericBoundFilterLongNoUpperNumeric",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterStringNoUpper",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterLongNoUpperNumeric",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterDoubleNoUpper",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundDoubleFilterNumeric",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilter",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterNull",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathInFilterVariant",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayStringNulls",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayStringNullsFiltered",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonQueryArrays",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_ADDA_without_complex_column",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = COLUMNAR, outputFrameType = ROW_BASED, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testUnnestRootSingleTypeArrayLongNulls",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathBoundFilterDoubleNoLowerNumeric",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testReturningAndSumPathWithMaths",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariant2Int",
+        "org.apache.druid.frame.key.FrameComparisonWidgetImplTest.test_noComplexColumns_compare_frameToKey",
+        "org.apache.druid.frame.key.RowKeyComparatorTest.test_compare_ADDADDAA",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterDouble",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = null, outputFrameType = ROW_BASED, sorted = DESCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonQueryDynamicArg",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLong",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testSumPathMixedFilteredAggDouble",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithNoKeyColumns",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeLongJsonValueFilter",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = ROW_BASED, outputFrameType = ROW_BASED, sorted = NONE]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeStringMixed1Sparse",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariant",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayDoubleNullsUnnest",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByOnNestedColumnWithOrderByAndLimit",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = ROW_BASED, outputFrameType = ROW_BASED, sorted = DESCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongNulls",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = ROW_BASED, outputFrameType = ROW_BASED, sorted = ASCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testTopNPath",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariant2",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_DDDD_without_complex_column",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterString",
+        "org.apache.druid.frame.key.FrameComparisonWidgetImplTest.test_noComplexColumns_readKey_allColumns",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayStringElementFiltered",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayDoubleNullsFiltered",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayLongFilteredArrayEquality",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = COLUMNAR, outputFrameType = ROW_BASED, sorted = ASCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeStringMixed1SparseNotNullCast2",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByOnNestedColumnWithOrderByAndLimit2",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathLikeFilterString",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterCoalesce",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_AAAAAAAA",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = null, outputFrameType = COLUMNAR, sorted = NONE]",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithoutRollupOnNestedData(String, Map)[1]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testSelectPathSelectorFilterVariantNull",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeArrayString",
+        "org.apache.druid.frame.key.RowKeyComparisonRunLengthsTest.testRunLengthsWithIncompleteRowSignature",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testFilterJsonIsNull",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRegularLongLongMixed1FilterNotNull",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByPathSelectorFilterVariant2BothTypesMatcher",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testSumPathFilteredAggDouble",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testJsonValueUnsupportedOptions",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testReturningAndSumPathDecimalWithMaths",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeStringMixed2",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootKeys",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_ADDADDAA",
+        "org.apache.druid.frame.key.ByteRowKeyComparatorTest.test_compare_DAADAADD",
+        "org.apache.druid.msq.exec.MSQComplexGroupByTest.testInsertWithoutRollupOnNestedData(String, Map)[4]",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = ROW_BASED, outputFrameType = ROW_BASED, sorted = DESCENDING]",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_hll[inputFrameType = ROW_BASED, outputFrameType = ROW_BASED, sorted = ASCENDING]",
+        "org.apache.druid.msq.test.CalciteNestedDataQueryMSQTest.testGroupByRootSingleTypeStringMixed1",
+        "org.apache.druid.frame.write.FrameWriterTest.test_complex_nested[inputFrameType = COLUMNAR, outputFrameType = COLUMNAR, sorted = NONE]"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 24,
+    "commit": "f0a68a9010d409eafb04063d35b47cc39ec134b4",
+    "parent": "9b1c2bbe4b4243915f3b2edc2270e3b4468cd54a",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "indexing-service:org.apache.druid.indexing.common.task.KillUnusedSegmentsTaskTest",
+        "server:org.apache.druid.query.lookup.LookupListeningAnnouncerConfigTest",
+        "server:org.apache.druid.query.lookup.LookupReferencesManagerTest"
+      ],
+      "added": [
+        "server:org.apache.druid.server.lookup.cache.LookupLoadingSpecTest"
+      ],
+      "modified_files": [
+        "indexing-service/src/test/java/org/apache/druid/indexing/common/task/KillUnusedSegmentsTaskTest.java",
+        "server/src/test/java/org/apache/druid/query/lookup/LookupListeningAnnouncerConfigTest.java",
+        "server/src/test/java/org/apache/druid/query/lookup/LookupReferencesManagerTest.java"
+      ],
+      "all": "indexing-service:org.apache.druid.indexing.common.task.KillUnusedSegmentsTaskTest server:org.apache.druid.query.lookup.LookupListeningAnnouncerConfigTest server:org.apache.druid.query.lookup.LookupReferencesManagerTest server:org.apache.druid.server.lookup.cache.LookupLoadingSpecTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 61,
+      "after_fail_count": 0,
+      "before_pass_count": 52,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 9
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.server.lookup.cache.LookupLoadingSpecTest.testLoadingOnlyRequiredLookups",
+        "org.apache.druid.server.lookup.cache.LookupLoadingSpecTest.testLoadingOnlyRequiredLookupsWithNullList",
+        "org.apache.druid.query.lookup.LookupReferencesManagerTest.testCoordinatorLoadNoLookups",
+        "org.apache.druid.server.lookup.cache.LookupLoadingSpecTest.testLoadingAllLookups",
+        "org.apache.druid.server.lookup.cache.LookupLoadingSpecTest.testLoadingNoLookups",
+        "org.apache.druid.query.lookup.LookupListeningAnnouncerConfigTest.testLookupsToLoadInjection",
+        "org.apache.druid.query.lookup.LookupReferencesManagerTest.testCoordinatorLoadSubsetOfLookups",
+        "org.apache.druid.query.lookup.LookupReferencesManagerTest.testCoordinatorLoadAllLookups",
+        "org.apache.druid.indexing.common.task.KillUnusedSegmentsTaskTest.testGetLookupsToLoad"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 30,
+    "commit": "51c8f65f05f1ef6fad46ba1bc1e2d905cb456595",
+    "parent": "e59bba1d54590c845979f9fa1d9515504a8f97fb",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [],
+      "added": [
+        "processing:org.apache.druid.math.expr.ConstantExprTest"
+      ],
+      "modified_files": [
+        "benchmarks/src/test/java/org/apache/druid/benchmark/ExpressionSelectorBenchmark.java"
+      ],
+      "all": "processing:org.apache.druid.math.expr.ConstantExprTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Crash/No Report",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 1,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 1
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.math.expr.ConstantExprTest.testLongSingleThreadedExpr"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 35,
+    "commit": "a472639f876e1de547af0319267009db821ec7e4",
+    "parent": "e93c41457a0194b94bf5abf2db0708b320977f4e",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "processing:org.apache.druid.util.emitter.core.HttpPostEmitterStressTest"
+      ],
+      "added": [
+        "extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchAggregatorFactoryTest",
+        "extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchAggregatorTest",
+        "extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchToQuantilePostAggregatorTest",
+        "extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchToQuantilesPostAggregatorTest"
+      ],
+      "modified_files": [
+        "processing/src/test/java/org/apache/druid/java/util/emitter/core/HttpPostEmitterStressTest.java"
+      ],
+      "all": "processing:org.apache.druid.util.emitter.core.HttpPostEmitterStressTest extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchAggregatorFactoryTest extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchAggregatorTest extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchToQuantilePostAggregatorTest extensions-contrib/ddsketch:org.apache.druid.query.aggregation.ddsketch.DDSketchToQuantilesPostAggregatorTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Crash/No Report",
+    "build_status_before": "Success",
+    "test_status_before": "Crash/No Report",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 0,
+      "after_fail_count": 0,
+      "before_pass_count": 0,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 0
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
+  },
+  {
+    "index": 36,
+    "commit": "bb56851dd7c629bd4fad29d8fcace8a304eee379",
+    "parent": "1482b880317210936a3ec74cec7931125146469e",
+    "validation_status": "VALID_BACKPORT",
+    "validation_reason": null,
+    "test_targets": {
+      "modified": [
+        "extensions-core/datasketches:org.apache.druid.query.aggregation.datasketches.hll.sql.HllSketchSqlAggregatorTest",
+        "processing:org.apache.druid.query.operator.window.WindowFramedAggregateProcessorTest",
+        "processing:org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest",
+        "sql:org.apache.druid.sql.calcite.CalciteQueryTest",
+        "sql:org.apache.druid.sql.calcite.DrillWindowQueryTest"
+      ],
+      "added": [
+        "processing:org.apache.druid.query.rowsandcols.semantic.DefaultFramedOnHeapAggregatableTest"
+      ],
+      "modified_files": [
+        "extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/hll/sql/HllSketchSqlAggregatorTest.java",
+        "processing/src/test/java/org/apache/druid/query/operator/window/WindowFramedAggregateProcessorTest.java",
+        "processing/src/test/java/org/apache/druid/query/rowsandcols/semantic/FramedOnHeapAggregatableTest.java",
+        "sql/src/test/java/org/apache/druid/query/OperatorFactoryBuilders.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/CalciteQueryTest.java",
+        "sql/src/test/java/org/apache/druid/sql/calcite/DrillWindowQueryTest.java"
+      ],
+      "all": "extensions-core/datasketches:org.apache.druid.query.aggregation.datasketches.hll.sql.HllSketchSqlAggregatorTest processing:org.apache.druid.query.operator.window.WindowFramedAggregateProcessorTest processing:org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest sql:org.apache.druid.sql.calcite.CalciteQueryTest sql:org.apache.druid.sql.calcite.DrillWindowQueryTest processing:org.apache.druid.query.rowsandcols.semantic.DefaultFramedOnHeapAggregatableTest"
+    },
+    "build_status_after": "Success",
+    "test_status_after": "Success",
+    "build_status_before": "Success",
+    "test_status_before": "Success",
+    "error_info": {
+      "before_error_type": null,
+      "before_error_msg": null,
+      "import_errors": []
+    },
+    "stats": {
+      "after_pass_count": 1300,
+      "after_fail_count": 0,
+      "before_pass_count": 1185,
+      "before_fail_count": 0,
+      "regression_count": 0,
+      "fix_count": 0,
+      "new_pass_count": 115
+    },
+    "details": {
+      "regressions": [],
+      "fixes": [],
+      "new_passes": [
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_10",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_64",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[RearrangedRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_82",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_48",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_testW_Nulls_7",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[NoAs-MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_3",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_9",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[RearrangedRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[NoAs-ConcatRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_7",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_51",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_7",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_8",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[NoAs-ConcatRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_52",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_14",
+        "org.apache.druid.query.rowsandcols.semantic.DefaultFramedOnHeapAggregatableTest.testInvertedOrderForLastK2",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_8",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_6",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[NoAs-FrameRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_49",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[ArrayListRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[FrameRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[NoAs-FrameRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_54",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[NoAs-FrameRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[NoAs-RearrangedRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[NoAs-ArrayListRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.DefaultFramedOnHeapAggregatableTest.testInvertedOrderForLastK",
+        "org.apache.druid.query.rowsandcols.semantic.DefaultFramedOnHeapAggregatableTest.testInvertedOrderForLastK3",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[NoAs-FrameRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_76",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[NoAs-ArrayListRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_28",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_3",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[ConcatRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[ConcatRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_12",
+        "org.apache.druid.sql.calcite.CalciteQueryTest.testWindowingWithOrderBy",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[NoAs-RearrangedRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[FrameRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_5",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[NoAs-MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[NoAs-ArrayListRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[NoAs-MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[NoAs-RearrangedRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_20",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[RearrangedRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_5",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_4",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[NoAs-ConcatRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_47",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[NoAs-ArrayListRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_78",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_55",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_25",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_18",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[NoAs-RearrangedRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[FrameRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[RearrangedRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_15",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[NoAs-MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[NoAs-ArrayListRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_19",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[ConcatRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[RearrangedRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_testW_Nulls_9",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[NoAs-MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[ArrayListRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_13",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_46",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[NoAs-ConcatRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[NoAs-RearrangedRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[NoAs-FrameRowsAndColumns]",
+        "org.apache.druid.query.operator.window.WindowFramedAggregateProcessorTest.testEquals",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_26",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_16",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_1",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_woPrtnBy_17",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_81",
+        "org.apache.druid.query.aggregation.datasketches.hll.sql.HllSketchSqlAggregatorTest.testHllWithOrderedWindowing",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_65",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[ArrayListRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[FrameRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[ConcatRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_50",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[FrameRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[RearrangedRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_31",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_4",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[NoAs-ArrayListRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_77",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_nestedAggs_cte_win_05",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_2",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1[FrameRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[ArrayListRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeA1[NoAs-ConcatRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1[ArrayListRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeOrderBy[ConcatRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_testW_Nulls_11",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[NoAs-ConcatRowsAndColumns]",
+        "org.apache.druid.sql.calcite.DrillWindowQueryTest.test_aggregates_winFnQry_53",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[NoAs-RearrangedRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[ArrayListRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[ConcatRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A2[NoAs-MapOfColumnsRowsAndColumns]",
+        "org.apache.druid.query.rowsandcols.semantic.FramedOnHeapAggregatableTest.testRangeB1A1_2[NoAs-FrameRowsAndColumns]"
+      ],
+      "persistent_failures": [],
+      "all_failures_after": [],
+      "all_failures_before": []
+    }
   }
 ]
